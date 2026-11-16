@@ -354,6 +354,8 @@ else()
   message(STATUS "Building without build tag")
 endif()
 
+# Noxium vendors all submodules directly in the repository
+set(MANUAL_SUBMODULES ON CACHE BOOL "Skip git submodule checks (submodules are vendored)")
 if(NOT MANUAL_SUBMODULES)
   find_package(Git)
   if(GIT_FOUND)

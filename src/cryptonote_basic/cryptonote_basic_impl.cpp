@@ -87,11 +87,12 @@ namespace cryptonote {
     const int target_minutes = target / 60;
     const int emission_speed_factor = EMISSION_SPEED_FACTOR_PER_MINUTE - (target_minutes-1);
 
-    uint64_t base_reward = (MONEY_SUPPLY - already_generated_coins) >> emission_speed_factor;
-    if (base_reward < FINAL_SUBSIDY_PER_MINUTE*target_minutes)
-    {
-      base_reward = FINAL_SUBSIDY_PER_MINUTE*target_minutes;
-    }
+    // LIMITED SUPPLY: smooth emission towards MONEY_SUPPLY, no tail emission.
+    // Once the cap is reached the block reward is 0 and miners earn fees only.
+    const uint64_t remaining = already_generated_coins >= MONEY_SUPPLY ? 0 : MONEY_SUPPLY - already_generated_coins;
+    uint64_t base_reward = remaining >> emission_speed_factor;
+    if (base_reward == 0 && remaining > 0)
+      base_reward = remaining; // pay out the last dust so the cap is reached exactly
 
     uint64_t full_reward_zone = get_min_block_weight(version);
 

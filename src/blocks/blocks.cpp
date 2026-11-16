@@ -20,6 +20,7 @@ namespace blocks
 
   const epee::span<const unsigned char> GetCheckpointsData(cryptonote::network_type network)
   {
+    return nullptr; // no precomputed Monero block hashes on this chain
     const auto it = CheckpointsByNetwork.find(network);
     if (it != CheckpointsByNetwork.end())
     {

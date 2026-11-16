@@ -3678,6 +3678,7 @@ bool Blockchain::check_fee(size_t tx_weight, uint64_t fee) const
     already_generated_coins = blockchain_height ? m_db->get_block_already_generated_coins(blockchain_height - 1) : 0;
     if (!get_block_reward(median, 1, already_generated_coins, base_reward, version))
       return false;
+    base_reward = std::max<uint64_t>(base_reward, FEE_REFERENCE_MIN_REWARD);
   }
 
   uint64_t needed_fee;
@@ -3790,6 +3791,7 @@ void Blockchain::get_dynamic_base_fee_estimate_2021_scaling(uint64_t grace_block
     MERROR("Failed to determine block reward, using placeholder " << print_money(BLOCK_REWARD_OVERESTIMATE) << " as a high bound");
     base_reward = BLOCK_REWARD_OVERESTIMATE;
   }
+  base_reward = std::max<uint64_t>(base_reward, FEE_REFERENCE_MIN_REWARD);
 
   get_dynamic_base_fee_estimate_2021_scaling(grace_blocks, base_reward, Mnw, Mlw_penalty_free_zone_for_wallet, fees);
 }
@@ -3831,6 +3833,7 @@ uint64_t Blockchain::get_dynamic_base_fee_estimate(uint64_t grace_blocks) const
     MERROR("Failed to determine block reward, using placeholder " << print_money(BLOCK_REWARD_OVERESTIMATE) << " as a high bound");
     base_reward = BLOCK_REWARD_OVERESTIMATE;
   }
+  base_reward = std::max<uint64_t>(base_reward, FEE_REFERENCE_MIN_REWARD);
 
   const bool use_long_term_median_in_fee = version >= HF_VERSION_LONG_TERM_BLOCK_WEIGHT;
   const uint64_t use_median_value = use_long_term_median_in_fee ? std::min<uint64_t>(median, m_long_term_effective_median_block_weight) : median;
