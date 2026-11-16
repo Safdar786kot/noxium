@@ -656,7 +656,8 @@ TEST(cryptonote_protocol_handler, race_condition)
   ){
     auto &storage = core.get_blockchain_storage();
     const auto height = storage.get_current_blockchain_height();
-    const auto hardfork = storage.get_current_hard_fork_version();
+    // Noxium: block 1 is already v16, so use the version of the block being built
+    const auto hardfork = storage.get_hard_fork_version(height);
     block.major_version = hardfork;
     block.minor_version = storage.get_ideal_hard_fork_version();
     block.prev_id = storage.get_tail_id();
@@ -677,7 +678,10 @@ TEST(cryptonote_protocol_handler, race_condition)
       reward,
       hardfork
     );
-    block.miner_tx.vout.push_back(cryptonote::tx_out{reward, cryptonote::txout_to_key{}});
+    if (hardfork >= HF_VERSION_VIEW_TAGS)
+      block.miner_tx.vout.push_back(cryptonote::tx_out{reward, cryptonote::txout_to_tagged_key{}});
+    else
+      block.miner_tx.vout.push_back(cryptonote::tx_out{reward, cryptonote::txout_to_key{}});
     diff = storage.get_difficulty_for_next_block();
   };
   struct stat {

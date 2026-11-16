@@ -57,9 +57,7 @@ namespace hw {
 
     device_registry::device_registry(){
         hw::core::register_all(registry);
-        #ifdef WITH_DEVICE_LEDGER
-        hw::ledger::register_all(registry);
-        #endif
+        // Noxium: Ledger/Trezor firmware only knows Monero address prefixes -> hardware wallets disabled
         atexit(clear_device_registry);
     }
 

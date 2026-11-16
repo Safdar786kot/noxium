@@ -1,0 +1,170 @@
+{
+ "checks": 8,
+ "consensus_mismatches": 0,
+ "transfers_ok": 12,
+ "transfers_failed": 0,
+ "errors": [],
+ "samples": [
+  {
+   "t": 1794843591,
+   "heights": {
+    "a": 94,
+    "b": 94,
+    "c": 94
+   },
+   "agree_at": 93,
+   "agree": true,
+   "alt_blocks": 2,
+   "emitted": 802499238518964,
+   "expected": 802499238518964,
+   "fees": 18518240000,
+   "difficulty": 42665,
+   "balances": {
+    "alice": 548.149041019319,
+    "bob": 235.999609313607,
+    "carol": 13.386299866407
+   }
+  },
+  {
+   "t": 1794843621,
+   "heights": {
+    "a": 94,
+    "b": 94,
+    "c": 94
+   },
+   "agree_at": 93,
+   "agree": true,
+   "alt_blocks": 2,
+   "emitted": 802499238518964,
+   "expected": 802499238518964,
+   "fees": 18518240000,
+   "difficulty": 42665,
+   "balances": {
+    "alice": 548.013741710568,
+    "bob": 235.999609313607,
+    "carol": 13.750843247556
+   }
+  },
+  {
+   "t": 1794843651,
+   "heights": {
+    "a": 94,
+    "b": 94,
+    "c": 94
+   },
+   "agree_at": 93,
+   "agree": true,
+   "alt_blocks": 2,
+   "emitted": 802499238518964,
+   "expected": 802499238518964,
+   "fees": 18518240000,
+   "difficulty": 42665,
+   "balances": {
+    "alice": 547.723988120625,
+    "bob": 235.999609313607,
+    "carol": 14.241863197912
+   }
+  },
+  {
+   "t": 1794843682,
+   "heights": {
+    "a": 94,
+    "b": 94,
+    "c": 94
+   },
+   "agree_at": 93,
+   "agree": true,
+   "alt_blocks": 2,
+   "emitted": 802499238518964,
+   "expected": 802499238518964,
+   "fees": 18518240000,
+   "difficulty": 42665,
+   "balances": {
+    "alice": 546.892209542784,
+    "bob": 235.999609313607,
+    "carol": 14.306037451293
+   }
+  },
+  {
+   "t": 1794843712,
+   "heights": {
+    "a": 94,
+    "b": 94,
+    "c": 94
+   },
+   "agree_at": 93,
+   "agree": true,
+   "alt_blocks": 2,
+   "emitted": 802499238518964,
+   "expected": 802499238518964,
+   "fees": 18518240000,
+   "difficulty": 42665,
+   "balances": {
+    "alice": 546.698179813457,
+    "bob": 235.999609313607,
+    "carol": 14.738678103612
+   }
+  },
+  {
+   "t": 1794843742,
+   "heights": {
+    "a": 94,
+    "b": 94,
+    "c": 94
+   },
+   "agree_at": 93,
+   "agree": true,
+   "alt_blocks": 2,
+   "emitted": 802499238518964,
+   "expected": 802499238518964,
+   "fees": 18518240000,
+   "difficulty": 42665,
+   "balances": {
+    "alice": 547.013048585985,
+    "bob": 235.999609313607,
+    "carol": 15.189720345544
+   }
+  },
+  {
+   "t": 1794843772,
+   "heights": {
+    "a": 94,
+    "b": 94,
+    "c": 94
+   },
+   "agree_at": 93,
+   "agree": true,
+   "alt_blocks": 2,
+   "emitted": 802499238518964,
+   "expected": 802499238518964,
+   "fees": 18518240000,
+   "difficulty": 42665,
+   "balances": {
+    "alice": 546.859198547917,
+    "bob": 235.999609313607,
+    "carol": 15.343133353612
+   }
+  },
+  {
+   "t": 1794843803,
+   "heights": {
+    "a": 94,
+    "b": 94,
+    "c": 94
+   },
+   "agree_at": 93,
+   "agree": true,
+   "alt_blocks": 2,
+   "emitted": 802499238518964,
+   "expected": 802499238518964,
+   "fees": 18518240000,
+   "difficulty": 42665,
+   "balances": {
+    "alice": 546.109658424261,
+    "bob": 235.999609313607,
+    "carol": 16.092236447268
+   }
+  }
+ ],
+ "reorgs_seen": 0
+}

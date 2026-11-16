@@ -296,7 +296,7 @@ namespace nodetool
 
   private:
     const std::vector<std::string> m_seed_nodes_list =
-    { }; // add your DNS seed hostnames here
+    {  }; // DNS seeds (rebrand.py -> DNS_SEEDS)
 
     bool islimitup=false;
     bool islimitdown=false;

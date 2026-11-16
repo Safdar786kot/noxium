@@ -1201,7 +1201,7 @@ bool Blockchain::switch_to_alternative_blockchain(std::list<block_extended_info>
   if (!get_block_hash(alt_chain.back().bl, prev_id))
     MERROR("Failed to get block hash of an alternative chain's tip");
   else
-    send_miner_notifications(new_height, seedhash, prev_id, alt_chain.back().already_generated_coins);
+    send_miner_notifications(new_height, seedhash, prev_id, m_db->get_block_already_generated_coins(new_height - 1));
 
   for (const auto& notifier : m_block_notifiers)
   {
@@ -1914,6 +1914,13 @@ bool Blockchain::handle_alternative_block(const block& b, const crypto::hash& id
     bei.height = prev_height + 1;
     uint64_t block_reward = get_outs_money_amount(b.miner_tx);
     const uint64_t prev_generated_coins = alt_chain.size() ? prev_data.already_generated_coins : m_db->get_block_already_generated_coins(prev_height);
+    {
+      // coinbase = subsidy + fees; only the subsidy counts towards the emission. The un-penalised
+      // subsidy is an upper bound for it, which is exact unless the block is over the median weight.
+      uint64_t full_subsidy = 0;
+      if (get_block_reward(0, 0, prev_generated_coins, full_subsidy, b.major_version))
+        block_reward = std::min(block_reward, full_subsidy);
+    }
     bei.already_generated_coins = (block_reward < (MONEY_SUPPLY - prev_generated_coins)) ? prev_generated_coins + block_reward : MONEY_SUPPLY;
 
     // verify that the block's timestamp is within the acceptable range

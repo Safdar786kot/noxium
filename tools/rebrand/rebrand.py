@@ -37,12 +37,29 @@ CONFIG = dict(
     ),
     PORTS = dict(mainnet=(17750, 17751, 17752), testnet=(27750, 27751, 27752), stagenet=(37750, 37751, 37752)),
     # 16-byte network IDs. Change them for your own coin (any random bytes).
+    # Generated with python3 -c "import secrets; print(secrets.token_hex(16))"
     NETWORK_ID = dict(
-        mainnet  = "4e4f58a1c3f2117b9d02e45a6c0b7f31",
-        testnet  = "4e4f58a1c3f2117b9d02e45a6c0b7f32",
-        stagenet = "4e4f58a1c3f2117b9d02e45a6c0b7f33",
+        mainnet  = "33a5a39d4b3c1541f4d0abbbda002eb3",
+        testnet  = "9defc17fb8bc7c1e04b4807097e920df",
+        stagenet = "f01c7dc738def3829f1ed3e1e2beb2ef",
     ),
-    GENESIS_SEED  = "Noxium genesis | 16 Nov 2026 | limited supply privacy coin",
+    # Random 256-bit value; the genesis keys are derived from it and thrown away
+    GENESIS_SEED  = "Noxium genesis 2026-11-16 08fbfe03db39ea8c162a74dc6defb1034235eab9d386bfe232303204434d771d",
+    # Hard-coded seed nodes ("ip:port"). Put the public IPs of your always-on nodes here.
+    SEED_NODES = dict(
+        mainnet  = [],   # e.g. "203.0.113.10:17750", "198.51.100.7:17750"
+        testnet  = [],   # e.g. "203.0.113.10:27750"
+        stagenet = [],
+    ),
+    # DNS seeds: hostnames with A/AAAA records pointing at your seed nodes (mainnet only)
+    DNS_SEEDS = [],      # e.g. "seeds.noxium.org"
+    TOR_SEEDS     = [],  # your nodes' "xxxx.onion:17753" addresses for --tx-proxy / anonymity zones
+    I2P_SEEDS     = [],  # your nodes' "xxxx.b32.i2p" addresses
+    DNS_BLOCKLIST = [],  # optional DNS blocklist domains you control (used with --enable-dns-blocklist)
+    UPDATE_URL    = "https://updates.noxium.invalid/",    # set to your own release server
+    DOWNLOAD_URL  = "https://downloads.noxium.invalid/",
+    # Checkpoints {height: "block hash"} – add once the chain is live
+    CHECKPOINTS = dict(mainnet={}, testnet={}, stagenet={}),
     LAUNCH_TIME   = 1794787200,        # 2026-11-16 00:00 UTC – timestamp used in hard-fork table
 )
 
@@ -75,9 +92,30 @@ def _mul(s, P=_B):
 def _enc(P):
     x, y, z, _ = P; zi = pow(z, _q - 2, _q); x, y = x*zi % _q, y*zi % _q
     return (y | ((x & 1) << 255)).to_bytes(32, "little")
-def _pub_from_seed(tag):
-    s = int.from_bytes(hashlib.sha512((CONFIG["GENESIS_SEED"] + tag).encode()).digest(), "little") % _l
-    return _enc(_mul(s))
+def _decompress(y):
+    """Return the curve point with this y (even x) or None if y is not on the curve."""
+    if y >= _q: return None
+    xx = (y*y - 1) * pow(_d*y*y + 1, _q - 2, _q) % _q
+    x = pow(xx, (_q + 3) // 8, _q)
+    if (x*x - xx) % _q: x = x * _I % _q
+    if (x*x - xx) % _q: return None
+    if x & 1: x = _q - x
+    return (x, y, 1, x * y % _q)
+def _is_identity(P):
+    x, y, z, _ = P
+    return x % _q == 0 and (y - z) % _q == 0
+def _nums_point(tag):
+    """Nothing-up-my-sleeve point: hash-to-y, decompress, multiply by the cofactor 8.
+    Nobody knows its discrete log, so an output sent to it can never be spent."""
+    ctr = 0
+    while True:
+        h = hashlib.sha512(f"{CONFIG['GENESIS_SEED']}|{tag}|{ctr}".encode()).digest()
+        P = _decompress(int.from_bytes(h[:32], "little") & ((1 << 255) - 1))
+        if P is not None:
+            P8 = _mul(8, P)
+            if not _is_identity(P8) and _is_identity(_mul(_l, P8)):
+                return _enc(P8)
+        ctr += 1
 
 def _varint(n):
     out = b""
@@ -85,12 +123,12 @@ def _varint(n):
     return out + bytes([n])
 
 def genesis_tx_hex(net):
-    """Genesis coinbase: v1 tx, unlock 60, one output to a key derived from the
-    seed whose private key is thrown away (the genesis reward is unspendable)."""
+    """Genesis coinbase: v1 tx, unlock 60, one output to a nothing-up-my-sleeve point
+    (unknown discrete log), so the genesis reward is provably unspendable."""
     supply = CONFIG["MAX_SUPPLY"] * 10**12
     amount = supply >> CONFIG["EMISSION_SPEED_FACTOR"]   # same formula as get_block_reward() for a v1 block
-    out_key = _pub_from_seed("|out|" + net)    # secret scalar is never stored -> burned
-    tx_pub  = _pub_from_seed("|txkey|" + net)
+    out_key = _nums_point("genesis-burn-output|" + net)
+    tx_pub  = _nums_point("genesis-tx-pubkey|" + net)
     tx = (_varint(1) + _varint(60) +           # version, unlock_time
           _varint(1) + b"\xff" + _varint(0) +  # 1 input: txin_gen(height 0)
           _varint(1) + _varint(amount) + b"\x02" + out_key +   # 1 output: txout_to_key
@@ -190,20 +228,28 @@ edit("src/cryptonote_core/blockchain.cpp", chain(
 def hf_table(name):
     t = C["LAUNCH_TIME"]
     return (f"const hardfork_t {name}_hard_forks[] = {{\n"
-            f"  // {C['NAME']}: genesis + block 1 are v1, every current Monero feature (RandomX,\n"
-            f"  // CLSAG, Bulletproofs+, view tags, ring size 16) is active from block 2.\n"
-            f"  {{ 1, 1, 0, {t} }},\n  {{ 16, 2, 0, {t + 1} }},\n}};")
+            f"  // {C['NAME']}: only the genesis block is v1; every current Monero feature (RandomX,\n"
+            f"  // CLSAG, Bulletproofs+, view tags, ring size 16) is active from block 1.\n"
+            f"  {{ 1, 0, 0, {t} }},\n  {{ 16, 1, 0, {t + 1} }},\n}};")
 def patch_hf(s):
     for n in ["mainnet", "testnet", "stagenet"]:
         s = sub(rf"const hardfork_t {n}_hard_forks\[\] = \{{.*?\n\}};", hf_table(n), flags=re.S)(s)
-        s = re.sub(rf"(const uint64_t {n}_hard_fork_version_1_till = )\d+;", r"\g<1>1;", s)
+        s = re.sub(rf"(const uint64_t {n}_hard_fork_version_1_till = )\d+;", r"\g<1>0;", s)
     return s
 edit("src/hardforks/hardforks.cpp", patch_hf)
+
+def checkpoint_code():
+    def adds(net):
+        return "".join(f'      ADD_CHECKPOINT({h}, "{v}");\n' for h, v in sorted(C["CHECKPOINTS"][net].items()))
+    return (f"    // {C['NAME']} checkpoints (configured in tools/rebrand/rebrand.py -> CHECKPOINTS)\n"
+            "    if (nettype == TESTNET)\n    {\n" + adds("testnet") + "      return true;\n    }\n"
+            "    if (nettype == STAGENET)\n    {\n" + adds("stagenet") + "      return true;\n    }\n"
+            "    if (nettype == MAINNET)\n    {\n" + adds("mainnet") + "    }\n    return true;")
 
 # --- 4. remove Monero checkpoints / seeds / DNS ------------------------------
 edit("src/checkpoints/checkpoints.cpp", chain(
     sub(r"(bool checkpoints::init_default_checkpoints\(network_type nettype\)\n  \{\n).*?(\n  \}\n\n  bool checkpoints::load_checkpoints_from_json)",
-        r"\1    // " + C["NAME"] + r": new chain - add your own checkpoints here once the chain is live\n    return true;\2", flags=re.S),
+        lambda m: m.group(1) + checkpoint_code() + m.group(2), flags=re.S),
     sub(r'static const std::vector<std::string> dns_urls = \{.*?\};', "static const std::vector<std::string> dns_urls = { };", flags=re.S),
     sub(r'static const std::vector<std::string> testnet_dns_urls = \{.*?\};', "static const std::vector<std::string> testnet_dns_urls = { };", flags=re.S),
     sub(r'static const std::vector<std::string> stagenet_dns_urls = \{.*?\};', "static const std::vector<std::string> stagenet_dns_urls = { };", flags=re.S),
@@ -213,9 +259,20 @@ edit("src/blocks/blocks.cpp", sub(
     r"\1    return nullptr; // no precomputed Monero block hashes on this chain\n"))
 for f in ["checkpoints.dat", "testnet_blocks.dat", "stagenet_blocks.dat"]:
     (ROOT / "src/blocks" / f).write_bytes(b"\x00")
-edit("src/p2p/net_node.inl", sub(r'      full_addrs\.insert\("[0-9.]+:[0-9]+"\);\n', ""))
+def seed_fn():
+    def ins(net):
+        return "".join(f'      full_addrs.insert("{a}");\n' for a in C["SEED_NODES"][net])
+    return ("std::set<std::string> node_server<t_payload_net_handler>::get_ip_seed_nodes() const\n  {\n"
+            "    std::set<std::string> full_addrs;\n"
+            f"    // {C['NAME']} seed nodes (configured in tools/rebrand/rebrand.py -> SEED_NODES)\n"
+            "    if (m_nettype == cryptonote::TESTNET)\n    {\n" + ins("testnet") + "    }\n"
+            "    else if (m_nettype == cryptonote::STAGENET)\n    {\n" + ins("stagenet") + "    }\n"
+            "    else if (m_nettype == cryptonote::FAKECHAIN)\n    {\n    }\n"
+            "    else\n    {\n" + ins("mainnet") + "    }\n    return full_addrs;\n  }")
+edit("src/p2p/net_node.inl", sub(r"std::set<std::string> node_server<t_payload_net_handler>::get_ip_seed_nodes\(\) const\n  \{.*?return full_addrs;\n  \}",
+     lambda m: seed_fn(), flags=re.S))
 edit("src/p2p/net_node.h", sub(r'const std::vector<std::string> m_seed_nodes_list =\n\s*\{[^}]*\};',
-     "const std::vector<std::string> m_seed_nodes_list =\n    { }; // add your DNS seed hostnames here"))
+     lambda m: "const std::vector<std::string> m_seed_nodes_list =\n    { " + ", ".join(f'"{h}"' for h in C["DNS_SEEDS"]) + " }; // DNS seeds (rebrand.py -> DNS_SEEDS)"))
 edit("src/common/updates.cpp", sub(r'static const std::vector<std::string> dns_urls = \{[^}]*\};',
      "static const std::vector<std::string> dns_urls = { };"))
 
@@ -253,6 +310,83 @@ for p in ROOT.joinpath("src").rglob("CMakeLists.txt"):
         p.write_text(new); print(f"[rebrand] binary names in {p.relative_to(ROOT)}")
 
 edit("src/version.cpp.in", sub(r'#define DEF_MONERO_RELEASE_NAME "Fluorine Fermi"', f'#define DEF_MONERO_RELEASE_NAME "{N} Genesis"'))
+
+# --- 6. security fixes (from the consensus review, see SECURITY_REVIEW.md) -----
+# C1: Monero's hard-coded PoW hash for its block 202612 would apply to our chain too
+edit("src/cryptonote_core/cryptonote_tx_utils.cpp", sub(
+    r'    // block 202612 bug workaround\n    if \(height == 202612\)\n    \{\n.*?\n      return true;\n    \}\n', "", flags=re.S))
+edit("src/cryptonote_basic/cryptonote_format_utils.cpp", sub(
+    r'(    if \(!hash_result\)\n      return false;\n\n)    if \(b\.miner_tx\.vin\.size\(\) == 1.*?\n    return hash_result;',
+    r'\1    return true; // ' + C["NAME"] + ': no Monero block-202612 id exception', flags=re.S))
+
+# M3: alt-chain already_generated_coins must not include fees
+edit("src/cryptonote_core/blockchain.cpp", chain(
+    sub(r'send_miner_notifications\(new_height, seedhash, prev_id, alt_chain\.back\(\)\.already_generated_coins\);',
+        'send_miner_notifications(new_height, seedhash, prev_id, m_db->get_block_already_generated_coins(new_height - 1));'),
+    sub(r'(    uint64_t block_reward = get_outs_money_amount\(b\.miner_tx\);\n    const uint64_t prev_generated_coins = [^\n]*\n)',
+        r'\1    {\n      // coinbase = subsidy + fees; only the subsidy counts towards the emission. The un-penalised\n'
+        r'      // subsidy is an upper bound for it, which is exact unless the block is over the median weight.\n'
+        r'      uint64_t full_subsidy = 0;\n'
+        r'      if (get_block_reward(0, 0, prev_generated_coins, full_subsidy, b.major_version))\n'
+        r'        block_reward = std::min(block_reward, full_subsidy);\n    }\n'),
+))
+
+# L1: no assert abort when base_reward == 0 (debug builds after the cap)
+edit("src/cryptonote_basic/cryptonote_basic_impl.cpp", sub(
+    r'(      MERROR\("Block cumulative weight is too big: ".*?\n      return false;\n    \}\n)',
+    r'\1\n    if (base_reward == 0) { // post-cap: nothing to penalise\n      reward = 0;\n      return true;\n    }\n', flags=re.S))
+
+# L2: Monero Tor/I2P seeds and DNS blocklist
+edit("src/p2p/net_node.inl", chain(
+    sub(r'(    case epee::net_utils::zone::tor:\n      if \(m_nettype == cryptonote::MAINNET\)\n      \{\n        return \{\n)[^}]*(\};)',
+        lambda m: m.group(1) + "".join(f'          "{a}",\n' for a in C["TOR_SEEDS"]) + "        " + m.group(2)),
+    sub(r'(    case epee::net_utils::zone::i2p:\n      if \(m_nettype == cryptonote::MAINNET\)\n      \{\n        return \{\n)[^}]*(\};)',
+        lambda m: m.group(1) + "".join(f'          "{a}",\n' for a in C["I2P_SEEDS"]) + "        " + m.group(2)),
+    sub(r'static const std::vector<std::string> dns_urls = \{\n      "blocklist\.moneropulse\.se".*?\};',
+        lambda m: "static const std::vector<std::string> dns_urls = { " + ", ".join(f'"{h}"' for h in C["DNS_BLOCKLIST"]) + " };", flags=re.S),
+))
+
+# L3: own message-signing domain separator
+edit("src/cryptonote_config.h", sub(r'HASH_KEY_MESSAGE_SIGNING\[\] = "MoneroMessageSignature"',
+     f'HASH_KEY_MESSAGE_SIGNING[] = "{N}MessageSignature"'))
+
+# L4: OpenAlias tag + address-length checks, CSV export width
+edit("src/common/dns_utils.cpp", sub(
+    r'  // make sure the txt record has "oa1:xmr" and find it\n  auto pos = s\.find\("oa1:xmr"\);(.*?)    // length of address == 95.*?\n  \}\n  return \{\};',
+    lambda m: f'  // make sure the txt record has "oa1:{T.lower()}" and find it\n  auto pos = s.find("oa1:{T.lower()}");' + m.group(1) +
+    '    // the caller parses/validates the address; just sanity-check the length\n'
+    '    if (pos2 - pos >= 90 && pos2 - pos <= 120)\n      return s.substr(pos, pos2 - pos);\n  }\n  return {};', flags=re.S))
+edit("src/simplewallet/simplewallet.cpp", lambda t: t.replace("%106.106s", "%s"))
+
+# L5: update checks off by default, no Monero download URLs
+edit("src/cryptonote_core/cryptonote_core.cpp", sub(
+    r'(  , "Check for new versions of )monero(: \[disabled\|notify\|download\|update\]"\n  , )"notify"',
+    r'\g<1>' + L + r'\2"disabled"'))
+edit("src/common/updates.cpp", sub(r'"https://downloads\.getmonero\.org/" : "https://updates\.getmonero\.org/"',
+     f'"{C["DOWNLOAD_URL"]}" : "{C["UPDATE_URL"]}"'))
+
+# L6: hardware wallets speak Monero's protocol/prefixes -> disabled
+edit("src/device/device.cpp", sub(r'        #ifdef WITH_DEVICE_LEDGER\n        hw::ledger::register_all\(registry\);\n        #endif\n',
+     f'        // {N}: Ledger/Trezor firmware only knows Monero address prefixes -> hardware wallets disabled\n'))
+edit("cmake/CheckTrezor.cmake", sub(r'OPTION\(USE_DEVICE_TREZOR "Trezor support compilation" ON\)',
+     'OPTION(USE_DEVICE_TREZOR "Trezor support compilation (off: firmware only knows Monero)" OFF)'))
+
+# wallet: hard-fork tables may skip versions (1 -> 16), look entries up by version
+edit("src/wallet/wallet2.cpp", sub(
+    r'  wallet_is_outdated = static_cast<size_t>\(hf_version\) > wallet_num_hard_forks;\n.*?\n  daemon_is_outdated = height < start_height \|\| height >= end_height;\n',
+    '  wallet_is_outdated = hf_version > wallet_hard_forks[wallet_num_hard_forks - 1].version;\n'
+    '  if (wallet_is_outdated)\n    return;\n\n'
+    '  // ' + N + ': the fork table may skip versions (1 -> 16), so look the entry up by version\n'
+    '  size_t idx = wallet_num_hard_forks;\n'
+    '  for (size_t n = 0; n < wallet_num_hard_forks; ++n)\n'
+    '    if (wallet_hard_forks[n].version == hf_version)\n      idx = n;\n'
+    '  if (idx == wallet_num_hard_forks)\n  {\n    daemon_is_outdated = true;\n    return;\n  }\n\n'
+    '  // check block\'s height falls within wallet\'s expected range for block\'s given version\n'
+    '  uint64_t start_height = hf_version == 1 ? 0 : wallet_hard_forks[idx].height;\n'
+    '  uint64_t end_height = idx + 1 >= wallet_num_hard_forks\n'
+    '    ? std::numeric_limits<uint64_t>::max()\n'
+    '    : wallet_hard_forks[idx + 1].height;\n\n'
+    '  daemon_is_outdated = height < start_height || height >= end_height;\n', flags=re.S))
 
 print(f"\n[rebrand] done: {N} ({T}), max supply {C['MAX_SUPPLY']:,} {T}")
 for n in ["mainnet", "testnet", "stagenet"]:

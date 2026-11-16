@@ -53,24 +53,47 @@ namespace
 
   TEST_F(block_reward_and_already_generated_coins, handles_first_values)
   {
-  	// 17592186044415 from neozaru, confirmed by fluffypony
-    TEST_ALREADY_GENERATED_COINS(0, UINT64_C(17592186044415));
-    TEST_ALREADY_GENERATED_COINS(m_block_reward, UINT64_C(17592169267200));
-    TEST_ALREADY_GENERATED_COINS(UINT64_C(2756434948434199641), UINT64_C(14963444829249));
+    // Noxium: MONEY_SUPPLY = 18,000,000 NOX, EMISSION_SPEED_FACTOR_PER_MINUTE = 22 (v1 => shift 22)
+    TEST_ALREADY_GENERATED_COINS(0, UINT64_C(4291534423828));
+    TEST_ALREADY_GENERATED_COINS(m_block_reward, UINT64_C(4291533400646));
+    TEST_ALREADY_GENERATED_COINS(UINT64_C(2756434948434199641), UINT64_C(3634349120036));
   }
 
-  TEST_F(block_reward_and_already_generated_coins, correctly_steps_from_2_to_1)
+  TEST_F(block_reward_and_already_generated_coins, approaches_cap_without_tail_emission)
   {
-    TEST_ALREADY_GENERATED_COINS(MONEY_SUPPLY - ((2 << 20) + 1), FINAL_SUBSIDY_PER_MINUTE);
-    TEST_ALREADY_GENERATED_COINS(MONEY_SUPPLY -  (2 << 20)     , FINAL_SUBSIDY_PER_MINUTE);
-    TEST_ALREADY_GENERATED_COINS(MONEY_SUPPLY - ((2 << 20) - 1), FINAL_SUBSIDY_PER_MINUTE);
+    static_assert(FINAL_SUBSIDY_PER_MINUTE == 0, "Noxium has no tail emission");
+    TEST_ALREADY_GENERATED_COINS(MONEY_SUPPLY - ((2 << 22) + 1), 2);
+    TEST_ALREADY_GENERATED_COINS(MONEY_SUPPLY -  (2 << 22)     , 2);
+    TEST_ALREADY_GENERATED_COINS(MONEY_SUPPLY - ((2 << 22) - 1), 1);
   }
 
   TEST_F(block_reward_and_already_generated_coins, handles_max)
   {
-    TEST_ALREADY_GENERATED_COINS(MONEY_SUPPLY - ((1 << 20) + 1), FINAL_SUBSIDY_PER_MINUTE);
-    TEST_ALREADY_GENERATED_COINS(MONEY_SUPPLY -  (1 << 20)     , FINAL_SUBSIDY_PER_MINUTE);
-    TEST_ALREADY_GENERATED_COINS(MONEY_SUPPLY - ((1 << 20) - 1), FINAL_SUBSIDY_PER_MINUTE);
+    // below 2^22 atomic units left, the remaining dust is paid out in one block
+    TEST_ALREADY_GENERATED_COINS(MONEY_SUPPLY - ((1 << 22) + 1), 1);
+    TEST_ALREADY_GENERATED_COINS(MONEY_SUPPLY -  (1 << 22)     , 1);
+    TEST_ALREADY_GENERATED_COINS(MONEY_SUPPLY - ((1 << 22) - 1), (1 << 22) - 1);
+    TEST_ALREADY_GENERATED_COINS(MONEY_SUPPLY - 1, 1);
+    // cap reached: no more coins, ever
+    TEST_ALREADY_GENERATED_COINS(MONEY_SUPPLY, 0);
+    TEST_ALREADY_GENERATED_COINS(MONEY_SUPPLY + 1, 0);
+    TEST_ALREADY_GENERATED_COINS(UINT64_MAX, 0);
+  }
+
+  TEST_F(block_reward_and_already_generated_coins, total_emission_never_exceeds_cap)
+  {
+    uint64_t generated = 0, reward = 0, blocks = 0;
+    while (true)
+    {
+      ASSERT_TRUE(get_block_reward(0, 0, generated, reward, 16));
+      if (reward == 0)
+        break;
+      ASSERT_LE(reward, MONEY_SUPPLY - generated);
+      generated += reward;
+      ++blocks;
+    }
+    ASSERT_EQ(generated, MONEY_SUPPLY);
+    ASSERT_GT(blocks, 60000000u);
   }
 
   //--------------------------------------------------------------------------------------------------------------------

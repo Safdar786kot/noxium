@@ -232,9 +232,9 @@ namespace config
   uint16_t const RPC_DEFAULT_PORT = 17751;
   uint16_t const ZMQ_RPC_DEFAULT_PORT = 17752;
   boost::uuids::uuid const NETWORK_ID = { {
-      0x4E, 0x4F, 0x58, 0xA1, 0xC3, 0xF2, 0x11, 0x7B, 0x9D, 0x02, 0xE4, 0x5A, 0x6C, 0x0B, 0x7F, 0x31
+      0x33, 0xA5, 0xA3, 0x9D, 0x4B, 0x3C, 0x15, 0x41, 0xF4, 0xD0, 0xAB, 0xBB, 0xDA, 0x00, 0x2E, 0xB3
     } }; // Bender's nightmare
-  std::string const GENESIS_TX = "013c01ff0001948e8a9bf37c02533b938b2b80f6edd3b981f53a3da1614b860ecb8b79a9bd96bdbbb317b9d8292101d1979597a33944bbe1fe58b0c654f0e6eb621fd678f1991b606317b14cb204b1";
+  std::string const GENESIS_TX = "013c01ff0001948e8a9bf37c02693741bca4d0ac9cf78ebafdb8d80b47bebd1b0d6cef410a2771932d6a0115de2101c32f73749582b7c20e6c6be8cc41d3f288686c093e4b399f7102559485293b3b";
   uint32_t const GENESIS_NONCE = 10000;
 
   // Hash domain separators
@@ -257,7 +257,7 @@ namespace config
   const unsigned char HASH_KEY_CLSAG_ROUND[] = "CLSAG_round";
   const unsigned char HASH_KEY_CLSAG_AGG_0[] = "CLSAG_agg_0";
   const unsigned char HASH_KEY_CLSAG_AGG_1[] = "CLSAG_agg_1";
-  const char HASH_KEY_MESSAGE_SIGNING[] = "MoneroMessageSignature";
+  const char HASH_KEY_MESSAGE_SIGNING[] = "NoxiumMessageSignature";
   const unsigned char HASH_KEY_MM_SLOT = 'm';
   const constexpr char HASH_KEY_MULTISIG_TX_PRIVKEYS_SEED[] = "multisig_tx_privkeys_seed";
   const constexpr char HASH_KEY_MULTISIG_TX_PRIVKEYS[] = "multisig_tx_privkeys";
@@ -275,9 +275,9 @@ namespace config
     uint16_t const RPC_DEFAULT_PORT = 27751;
     uint16_t const ZMQ_RPC_DEFAULT_PORT = 27752;
     boost::uuids::uuid const NETWORK_ID = { {
-        0x4E, 0x4F, 0x58, 0xA1, 0xC3, 0xF2, 0x11, 0x7B, 0x9D, 0x02, 0xE4, 0x5A, 0x6C, 0x0B, 0x7F, 0x32
+        0x9D, 0xEF, 0xC1, 0x7F, 0xB8, 0xBC, 0x7C, 0x1E, 0x04, 0xB4, 0x80, 0x70, 0x97, 0xE9, 0x20, 0xDF
       } }; // Bender's daydream
-    std::string const GENESIS_TX = "013c01ff0001948e8a9bf37c02df5ba8788a894e3e27f7ae8359ba0d49c5b75fef4e84e4b8074bd712c00f8ead210144b294fad25f09a226d4d52f5cfc2506ccbe3741fa97a2d10c43fa9583a767a4";
+    std::string const GENESIS_TX = "013c01ff0001948e8a9bf37c02293f11b427f960c64a24ac0dab1f6515b4516211451586b420d6036515f253b72101b7d20b08166dc5b00cdb58c6a62568fd43c6a0e956b199b5a7b6eee6184402f2";
     uint32_t const GENESIS_NONCE = 10001;
   }
 
@@ -290,9 +290,9 @@ namespace config
     uint16_t const RPC_DEFAULT_PORT = 37751;
     uint16_t const ZMQ_RPC_DEFAULT_PORT = 37752;
     boost::uuids::uuid const NETWORK_ID = { {
-        0x4E, 0x4F, 0x58, 0xA1, 0xC3, 0xF2, 0x11, 0x7B, 0x9D, 0x02, 0xE4, 0x5A, 0x6C, 0x0B, 0x7F, 0x33
+        0xF0, 0x1C, 0x7D, 0xC7, 0x38, 0xDE, 0xF3, 0x82, 0x9F, 0x1E, 0xD3, 0xE1, 0xE2, 0xBE, 0xB2, 0xEF
       } }; // Bender's daydream
-    std::string const GENESIS_TX = "013c01ff0001948e8a9bf37c02a00150e494ecfc053b612d1e8efd65837061f87acccf79076bcadf58776fd2652101996451ebaf7c6b9a966b11feceefaec92a70339efd77384ec90989495757735f";
+    std::string const GENESIS_TX = "013c01ff0001948e8a9bf37c021cbbddc68b3b966bf5dc8e89000f3a4e34edb363deeea4f36474fdae7c5c4d002101500fd0e9d6f4ca4dc497f0cff4a87ca05f20ae38ed83d55721936c54f1cb73ae";
     uint32_t const GENESIS_NONCE = 10002;
   }
 }

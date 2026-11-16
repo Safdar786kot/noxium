@@ -37,9 +37,9 @@
 
 TEST(AddressFromTXT, Success)
 {
-  std::string addr = "46BeWrHpwXmHDpDEUmZBWZfoQpdc6HaERCNmx1pEYL2rAcuwufPN9rXHHtyUA4QVy66qeFQkn6sfK8aHYjA3jk3o1Bv16em";
+  std::string addr = "Nx3S9ZhMwjdD7AatNnwq2Jiy72HPqMaBoeBFowpmRMYDTdgMY8fFLs1ZBLECTDVNxWbK5cpm821fJgqcco9jZrYd3BVKYJDVe";
 
-  std::string txtr = "oa1:xmr";
+  std::string txtr = "oa1:nox";
   txtr += " recipient_address=";
   txtr += addr;
   txtr += ";";
@@ -58,7 +58,7 @@ TEST(AddressFromTXT, Success)
 
   EXPECT_STREQ(addr.c_str(), res.c_str());
 
-  std::string txtr3 = "foobar oa1:xmr tx_description=\"Donation for Monero Development Fund\"; ";
+  std::string txtr3 = "foobar oa1:nox tx_description=\"Donation for Monero Development Fund\"; ";
   txtr3 += "recipient_address=";
   txtr3 += addr;
   txtr3 += "; foobar";
@@ -70,7 +70,7 @@ TEST(AddressFromTXT, Success)
 
 TEST(AddressFromTXT, Failure)
 {
-  std::string txtr = "oa1:xmr recipient_address=not a real address";
+  std::string txtr = "oa1:nox recipient_address=not a real address";
 
   std::string res = tools::dns_utils::address_from_txt_record(txtr);
 
@@ -82,7 +82,9 @@ TEST(AddressFromTXT, Failure)
   ASSERT_STREQ("", res.c_str());
 }
 
-TEST(AddressFromURL, Success)
+// Noxium: there is no Noxium OpenAlias record yet (this queried donate.getmonero.org,
+// which publishes a Monero "oa1:xmr" record). Re-enable once you publish an "oa1:nox" record.
+TEST(AddressFromURL, DISABLED_Success)
 {
   const std::string addr = MONERO_DONATION_ADDR;
   

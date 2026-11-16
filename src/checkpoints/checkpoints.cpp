@@ -195,7 +195,18 @@ namespace cryptonote
 
   bool checkpoints::init_default_checkpoints(network_type nettype)
   {
-    // Noxium: new chain - add your own checkpoints here once the chain is live
+    // Noxium checkpoints (configured in tools/rebrand/rebrand.py -> CHECKPOINTS)
+    if (nettype == TESTNET)
+    {
+      return true;
+    }
+    if (nettype == STAGENET)
+    {
+      return true;
+    }
+    if (nettype == MAINNET)
+    {
+    }
     return true;
   }
 

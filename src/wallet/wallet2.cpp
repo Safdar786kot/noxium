@@ -3487,15 +3487,26 @@ void check_block_hard_fork_version(cryptonote::network_type nettype, uint8_t hf_
   const hardfork_t *wallet_hard_forks = nettype == TESTNET ? testnet_hard_forks
     : nettype == STAGENET ? stagenet_hard_forks : mainnet_hard_forks;
 
-  wallet_is_outdated = static_cast<size_t>(hf_version) > wallet_num_hard_forks;
+  wallet_is_outdated = hf_version > wallet_hard_forks[wallet_num_hard_forks - 1].version;
   if (wallet_is_outdated)
     return;
 
+  // Noxium: the fork table may skip versions (1 -> 16), so look the entry up by version
+  size_t idx = wallet_num_hard_forks;
+  for (size_t n = 0; n < wallet_num_hard_forks; ++n)
+    if (wallet_hard_forks[n].version == hf_version)
+      idx = n;
+  if (idx == wallet_num_hard_forks)
+  {
+    daemon_is_outdated = true;
+    return;
+  }
+
   // check block's height falls within wallet's expected range for block's given version
-  uint64_t start_height = hf_version == 1 ? 0 : wallet_hard_forks[hf_version - 1].height;
-  uint64_t end_height = static_cast<size_t>(hf_version) + 1 > wallet_num_hard_forks
+  uint64_t start_height = hf_version == 1 ? 0 : wallet_hard_forks[idx].height;
+  uint64_t end_height = idx + 1 >= wallet_num_hard_forks
     ? std::numeric_limits<uint64_t>::max()
-    : wallet_hard_forks[hf_version].height;
+    : wallet_hard_forks[idx + 1].height;
 
   daemon_is_outdated = height < start_height || height >= end_height;
 }

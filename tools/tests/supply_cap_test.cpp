@@ -12,15 +12,14 @@ int main()
   int failures = 0;
   auto check = [&](bool ok, const char* what) { std::printf("[%s] %s\n", ok ? "PASS" : "FAIL", what); if (!ok) ++failures; };
 
-  // genesis + block 1 are v1 blocks (60 s target)
+  // only the genesis block is v1 (60 s target); block 1 onwards is v16
   get_block_reward(0, 0, 0, r, 1);  gen += r;
-  get_block_reward(0, 0, gen, r, 1); gen += r;
   get_block_reward(0, 0, gen, r, v);
   std::printf("first v16 reward: %.12f\n", r / 1e12);
-  check(r == 8583064754930ull, "first v16 block reward is ~8.583 NOX");
+  check(r == 8583066801293ull, "first v16 block reward is ~8.583 NOX");
 
   // run the whole emission (63.6M blocks) and make sure the cap is hit exactly
-  uint64_t blocks = 2;
+  uint64_t blocks = 1;
   while (gen < MONEY_SUPPLY)
   {
     if (!get_block_reward(0, 0, gen, r, v)) { check(false, "get_block_reward failed"); return 1; }

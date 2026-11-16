@@ -32,27 +32,27 @@
 #define MONERO_DEFAULT_LOG_CATEGORY "blockchain.hardforks"
 
 const hardfork_t mainnet_hard_forks[] = {
-  // Noxium: genesis + block 1 are v1, every current Monero feature (RandomX,
-  // CLSAG, Bulletproofs+, view tags, ring size 16) is active from block 2.
-  { 1, 1, 0, 1794787200 },
-  { 16, 2, 0, 1794787201 },
+  // Noxium: only the genesis block is v1; every current Monero feature (RandomX,
+  // CLSAG, Bulletproofs+, view tags, ring size 16) is active from block 1.
+  { 1, 0, 0, 1794787200 },
+  { 16, 1, 0, 1794787201 },
 };
 const size_t num_mainnet_hard_forks = sizeof(mainnet_hard_forks) / sizeof(mainnet_hard_forks[0]);
-const uint64_t mainnet_hard_fork_version_1_till = 1;
+const uint64_t mainnet_hard_fork_version_1_till = 0;
 
 const hardfork_t testnet_hard_forks[] = {
-  // Noxium: genesis + block 1 are v1, every current Monero feature (RandomX,
-  // CLSAG, Bulletproofs+, view tags, ring size 16) is active from block 2.
-  { 1, 1, 0, 1794787200 },
-  { 16, 2, 0, 1794787201 },
+  // Noxium: only the genesis block is v1; every current Monero feature (RandomX,
+  // CLSAG, Bulletproofs+, view tags, ring size 16) is active from block 1.
+  { 1, 0, 0, 1794787200 },
+  { 16, 1, 0, 1794787201 },
 };
 const size_t num_testnet_hard_forks = sizeof(testnet_hard_forks) / sizeof(testnet_hard_forks[0]);
-const uint64_t testnet_hard_fork_version_1_till = 1;
+const uint64_t testnet_hard_fork_version_1_till = 0;
 
 const hardfork_t stagenet_hard_forks[] = {
-  // Noxium: genesis + block 1 are v1, every current Monero feature (RandomX,
-  // CLSAG, Bulletproofs+, view tags, ring size 16) is active from block 2.
-  { 1, 1, 0, 1794787200 },
-  { 16, 2, 0, 1794787201 },
+  // Noxium: only the genesis block is v1; every current Monero feature (RandomX,
+  // CLSAG, Bulletproofs+, view tags, ring size 16) is active from block 1.
+  { 1, 0, 0, 1794787200 },
+  { 16, 1, 0, 1794787201 },
 };
 const size_t num_stagenet_hard_forks = sizeof(stagenet_hard_forks) / sizeof(stagenet_hard_forks[0]);

@@ -1,0 +1,2 @@
+2026-11-16 15:39:37.208	[P2P1]	INFO	global	src/cryptonote_core/blockchain.cpp:2109	###### REORGANIZE on height: 88 of 89 with cum_difficulty 2643097
+2026-11-16 15:39:37.234	[P2P1]	INFO	global	src/cryptonote_core/blockchain.cpp:1219	REORGANIZE SUCCESS! on height: 88, new blockchain size: 90

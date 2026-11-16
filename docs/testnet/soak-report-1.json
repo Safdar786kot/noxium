@@ -1,0 +1,3522 @@
+{
+ "checks": 173,
+ "consensus_mismatches": 0,
+ "transfers_ok": 0,
+ "transfers_failed": 51,
+ "errors": [
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "alice->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}",
+  "bob->carol: transfer: {'code': -19, 'message': 'not enough outputs to use Please use sweep_dust.'}"
+ ],
+ "samples": [
+  {
+   "t": 1794835669,
+   "heights": {
+    "a": 1,
+    "b": 1,
+    "c": 1
+   },
+   "agree_at": 0,
+   "agree": true,
+   "alt_blocks": 0,
+   "emitted": 4291534423828,
+   "expected": 4291534423828,
+   "fees": 0,
+   "difficulty": 1,
+   "balances": {
+    "alice": 0.0,
+    "bob": 0.0,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794835699,
+   "heights": {
+    "a": 1,
+    "b": 1,
+    "c": 1
+   },
+   "agree_at": 0,
+   "agree": true,
+   "alt_blocks": 0,
+   "emitted": 4291534423828,
+   "expected": 4291534423828,
+   "fees": 0,
+   "difficulty": 1,
+   "balances": {
+    "alice": 0.0,
+    "bob": 0.0,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794835729,
+   "heights": {
+    "a": 9,
+    "b": 9,
+    "c": 9
+   },
+   "agree_at": 8,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 72955954237973,
+   "expected": 72955954237973,
+   "fees": 0,
+   "difficulty": 6810,
+   "balances": {
+    "alice": 68.664419814145,
+    "bob": 0.0,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794835759,
+   "heights": {
+    "a": 11,
+    "b": 11,
+    "c": 11
+   },
+   "agree_at": 10,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 90122018264355,
+   "expected": 90122018264355,
+   "fees": 0,
+   "difficulty": 42746,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 8.583034059546,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794835789,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794835819,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794835849,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794835879,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794835909,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794835939,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794835969,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794835999,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836029,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836059,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836089,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836119,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836149,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836179,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836209,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836239,
+   "heights": {
+    "a": 12,
+    "b": 12,
+    "c": 12
+   },
+   "agree_at": 11,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 98705044138484,
+   "expected": 98705044138484,
+   "fees": 0,
+   "difficulty": 86828,
+   "balances": {
+    "alice": 77.247449780981,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836269,
+   "heights": {
+    "a": 13,
+    "b": 13,
+    "c": 13
+   },
+   "agree_at": 12,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 107288065919907,
+   "expected": 107288065919907,
+   "fees": 0,
+   "difficulty": 31521,
+   "balances": {
+    "alice": 85.830471562404,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836299,
+   "heights": {
+    "a": 14,
+    "b": 14,
+    "c": 14
+   },
+   "agree_at": 13,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 115871083608626,
+   "expected": 115871083608626,
+   "fees": 0,
+   "difficulty": 36947,
+   "balances": {
+    "alice": 94.413489251123,
+    "bob": 17.166059933675,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836329,
+   "heights": {
+    "a": 16,
+    "b": 16,
+    "c": 16
+   },
+   "agree_at": 15,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 133037106707962,
+   "expected": 133037106707962,
+   "fees": 0,
+   "difficulty": 48992,
+   "balances": {
+    "alice": 94.413489251123,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836359,
+   "heights": {
+    "a": 16,
+    "b": 16,
+    "c": 16
+   },
+   "agree_at": 15,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 133037106707962,
+   "expected": 133037106707962,
+   "fees": 0,
+   "difficulty": 48992,
+   "balances": {
+    "alice": 94.413489251123,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836389,
+   "heights": {
+    "a": 16,
+    "b": 16,
+    "c": 16
+   },
+   "agree_at": 15,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 133037106707962,
+   "expected": 133037106707962,
+   "fees": 0,
+   "difficulty": 48992,
+   "balances": {
+    "alice": 94.413489251123,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836419,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836449,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836479,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836509,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836539,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836569,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836599,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836629,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836659,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836689,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836719,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836749,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836843,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794836972,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794837070,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794837153,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794837230,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794837339,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794837474,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794837620,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794837776,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794837864,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794837894,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794837924,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794837954,
+   "heights": {
+    "a": 17,
+    "b": 17,
+    "c": 17
+   },
+   "agree_at": 16,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 141620112118582,
+   "expected": 141620112118582,
+   "fees": 0,
+   "difficulty": 51459,
+   "balances": {
+    "alice": 102.996494661743,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794837984,
+   "heights": {
+    "a": 18,
+    "b": 18,
+    "c": 18
+   },
+   "agree_at": 17,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 150203113436506,
+   "expected": 150203113436506,
+   "fees": 0,
+   "difficulty": 19088,
+   "balances": {
+    "alice": 111.579495979667,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838014,
+   "heights": {
+    "a": 18,
+    "b": 18,
+    "c": 18
+   },
+   "agree_at": 17,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 150203113436506,
+   "expected": 150203113436506,
+   "fees": 0,
+   "difficulty": 19088,
+   "balances": {
+    "alice": 111.579495979667,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838044,
+   "heights": {
+    "a": 18,
+    "b": 18,
+    "c": 18
+   },
+   "agree_at": 17,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 150203113436506,
+   "expected": 150203113436506,
+   "fees": 0,
+   "difficulty": 19088,
+   "balances": {
+    "alice": 111.579495979667,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838074,
+   "heights": {
+    "a": 18,
+    "b": 18,
+    "c": 18
+   },
+   "agree_at": 17,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 150203113436506,
+   "expected": 150203113436506,
+   "fees": 0,
+   "difficulty": 19088,
+   "balances": {
+    "alice": 111.579495979667,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838104,
+   "heights": {
+    "a": 18,
+    "b": 18,
+    "c": 18
+   },
+   "agree_at": 17,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 150203113436506,
+   "expected": 150203113436506,
+   "fees": 0,
+   "difficulty": 19088,
+   "balances": {
+    "alice": 111.579495979667,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838134,
+   "heights": {
+    "a": 18,
+    "b": 18,
+    "c": 18
+   },
+   "agree_at": 17,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 150203113436506,
+   "expected": 150203113436506,
+   "fees": 0,
+   "difficulty": 19088,
+   "balances": {
+    "alice": 111.579495979667,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838164,
+   "heights": {
+    "a": 21,
+    "b": 21,
+    "c": 21
+   },
+   "agree_at": 20,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 175952092834122,
+   "expected": 175952092834122,
+   "fees": 0,
+   "difficulty": 20438,
+   "balances": {
+    "alice": 137.328475377283,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838194,
+   "heights": {
+    "a": 23,
+    "b": 23,
+    "c": 23
+   },
+   "agree_at": 22,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 193118058635756,
+   "expected": 193118058635756,
+   "fees": 0,
+   "difficulty": 22140,
+   "balances": {
+    "alice": 154.494441178917,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838224,
+   "heights": {
+    "a": 23,
+    "b": 23,
+    "c": 23
+   },
+   "agree_at": 22,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 193118058635756,
+   "expected": 193118058635756,
+   "fees": 0,
+   "difficulty": 22140,
+   "balances": {
+    "alice": 154.494441178917,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838254,
+   "heights": {
+    "a": 23,
+    "b": 23,
+    "c": 23
+   },
+   "agree_at": 22,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 193118058635756,
+   "expected": 193118058635756,
+   "fees": 0,
+   "difficulty": 22140,
+   "balances": {
+    "alice": 154.494441178917,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838284,
+   "heights": {
+    "a": 23,
+    "b": 23,
+    "c": 23
+   },
+   "agree_at": 22,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 193118058635756,
+   "expected": 193118058635756,
+   "fees": 0,
+   "difficulty": 22140,
+   "balances": {
+    "alice": 154.494441178917,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838314,
+   "heights": {
+    "a": 23,
+    "b": 23,
+    "c": 23
+   },
+   "agree_at": 22,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 193118058635756,
+   "expected": 193118058635756,
+   "fees": 0,
+   "difficulty": 22140,
+   "balances": {
+    "alice": 154.494441178917,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838344,
+   "heights": {
+    "a": 23,
+    "b": 23,
+    "c": 23
+   },
+   "agree_at": 22,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 193118058635756,
+   "expected": 193118058635756,
+   "fees": 0,
+   "difficulty": 22140,
+   "balances": {
+    "alice": 154.494441178917,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838374,
+   "heights": {
+    "a": 23,
+    "b": 23,
+    "c": 23
+   },
+   "agree_at": 22,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 193118058635756,
+   "expected": 193118058635756,
+   "fees": 0,
+   "difficulty": 22140,
+   "balances": {
+    "alice": 154.494441178917,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838404,
+   "heights": {
+    "a": 23,
+    "b": 23,
+    "c": 23
+   },
+   "agree_at": 22,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 193118058635756,
+   "expected": 193118058635756,
+   "fees": 0,
+   "difficulty": 22140,
+   "balances": {
+    "alice": 154.494441178917,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838434,
+   "heights": {
+    "a": 23,
+    "b": 23,
+    "c": 23
+   },
+   "agree_at": 22,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 193118058635756,
+   "expected": 193118058635756,
+   "fees": 0,
+   "difficulty": 22140,
+   "balances": {
+    "alice": 154.494441178917,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838464,
+   "heights": {
+    "a": 23,
+    "b": 23,
+    "c": 23
+   },
+   "agree_at": 22,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 193118058635756,
+   "expected": 193118058635756,
+   "fees": 0,
+   "difficulty": 22140,
+   "balances": {
+    "alice": 154.494441178917,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838494,
+   "heights": {
+    "a": 23,
+    "b": 23,
+    "c": 23
+   },
+   "agree_at": 22,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 193118058635756,
+   "expected": 193118058635756,
+   "fees": 0,
+   "difficulty": 22140,
+   "balances": {
+    "alice": 154.494441178917,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838524,
+   "heights": {
+    "a": 23,
+    "b": 23,
+    "c": 23
+   },
+   "agree_at": 22,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 193118058635756,
+   "expected": 193118058635756,
+   "fees": 0,
+   "difficulty": 22140,
+   "balances": {
+    "alice": 154.494441178917,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838554,
+   "heights": {
+    "a": 24,
+    "b": 24,
+    "c": 24
+   },
+   "agree_at": 23,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 201701035397545,
+   "expected": 201701035397545,
+   "fees": 0,
+   "difficulty": 20404,
+   "balances": {
+    "alice": 163.077417940706,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838584,
+   "heights": {
+    "a": 24,
+    "b": 24,
+    "c": 24
+   },
+   "agree_at": 23,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 201701035397545,
+   "expected": 201701035397545,
+   "fees": 0,
+   "difficulty": 20404,
+   "balances": {
+    "alice": 163.077417940706,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838614,
+   "heights": {
+    "a": 24,
+    "b": 24,
+    "c": 24
+   },
+   "agree_at": 23,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 201701035397545,
+   "expected": 201701035397545,
+   "fees": 0,
+   "difficulty": 20404,
+   "balances": {
+    "alice": 163.077417940706,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838644,
+   "heights": {
+    "a": 24,
+    "b": 24,
+    "c": 24
+   },
+   "agree_at": 23,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 201701035397545,
+   "expected": 201701035397545,
+   "fees": 0,
+   "difficulty": 20404,
+   "balances": {
+    "alice": 163.077417940706,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838674,
+   "heights": {
+    "a": 24,
+    "b": 24,
+    "c": 24
+   },
+   "agree_at": 23,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 201701035397545,
+   "expected": 201701035397545,
+   "fees": 0,
+   "difficulty": 20404,
+   "balances": {
+    "alice": 163.077417940706,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838704,
+   "heights": {
+    "a": 25,
+    "b": 25,
+    "c": 25
+   },
+   "agree_at": 24,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 210284008066652,
+   "expected": 210284008066652,
+   "fees": 0,
+   "difficulty": 20269,
+   "balances": {
+    "alice": 171.660390609813,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838734,
+   "heights": {
+    "a": 25,
+    "b": 25,
+    "c": 25
+   },
+   "agree_at": 24,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 210284008066652,
+   "expected": 210284008066652,
+   "fees": 0,
+   "difficulty": 20269,
+   "balances": {
+    "alice": 171.660390609813,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838764,
+   "heights": {
+    "a": 25,
+    "b": 25,
+    "c": 25
+   },
+   "agree_at": 24,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 210284008066652,
+   "expected": 210284008066652,
+   "fees": 0,
+   "difficulty": 20269,
+   "balances": {
+    "alice": 171.660390609813,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838794,
+   "heights": {
+    "a": 26,
+    "b": 26,
+    "c": 26
+   },
+   "agree_at": 25,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 218866976643079,
+   "expected": 218866976643079,
+   "fees": 0,
+   "difficulty": 20432,
+   "balances": {
+    "alice": 180.24335918624,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838824,
+   "heights": {
+    "a": 27,
+    "b": 27,
+    "c": 27
+   },
+   "agree_at": 26,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 227449941126828,
+   "expected": 227449941126828,
+   "fees": 0,
+   "difficulty": 20952,
+   "balances": {
+    "alice": 188.826323669989,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838854,
+   "heights": {
+    "a": 29,
+    "b": 29,
+    "c": 29
+   },
+   "agree_at": 28,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 244615857816298,
+   "expected": 244615857816298,
+   "fees": 0,
+   "difficulty": 22326,
+   "balances": {
+    "alice": 205.992240359459,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838884,
+   "heights": {
+    "a": 29,
+    "b": 29,
+    "c": 29
+   },
+   "agree_at": 28,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 244615857816298,
+   "expected": 244615857816298,
+   "fees": 0,
+   "difficulty": 22326,
+   "balances": {
+    "alice": 205.992240359459,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838914,
+   "heights": {
+    "a": 29,
+    "b": 29,
+    "c": 29
+   },
+   "agree_at": 28,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 244615857816298,
+   "expected": 244615857816298,
+   "fees": 0,
+   "difficulty": 22326,
+   "balances": {
+    "alice": 205.992240359459,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838944,
+   "heights": {
+    "a": 30,
+    "b": 30,
+    "c": 30
+   },
+   "agree_at": 29,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 253198810022023,
+   "expected": 253198810022023,
+   "fees": 0,
+   "difficulty": 22566,
+   "balances": {
+    "alice": 214.575192565184,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794838974,
+   "heights": {
+    "a": 31,
+    "b": 31,
+    "c": 31
+   },
+   "agree_at": 30,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 261781758135078,
+   "expected": 261781758135078,
+   "fees": 0,
+   "difficulty": 23252,
+   "balances": {
+    "alice": 223.158140678239,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839004,
+   "heights": {
+    "a": 31,
+    "b": 31,
+    "c": 31
+   },
+   "agree_at": 30,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 261781758135078,
+   "expected": 261781758135078,
+   "fees": 0,
+   "difficulty": 23252,
+   "balances": {
+    "alice": 223.158140678239,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839035,
+   "heights": {
+    "a": 32,
+    "b": 32,
+    "c": 32
+   },
+   "agree_at": 31,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 270364702155464,
+   "expected": 270364702155464,
+   "fees": 0,
+   "difficulty": 23705,
+   "balances": {
+    "alice": 231.741084698625,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839065,
+   "heights": {
+    "a": 32,
+    "b": 32,
+    "c": 32
+   },
+   "agree_at": 31,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 270364702155464,
+   "expected": 270364702155464,
+   "fees": 0,
+   "difficulty": 23705,
+   "balances": {
+    "alice": 231.741084698625,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839095,
+   "heights": {
+    "a": 32,
+    "b": 32,
+    "c": 32
+   },
+   "agree_at": 31,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 270364702155464,
+   "expected": 270364702155464,
+   "fees": 0,
+   "difficulty": 23705,
+   "balances": {
+    "alice": 231.741084698625,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839125,
+   "heights": {
+    "a": 33,
+    "b": 33,
+    "c": 33
+   },
+   "agree_at": 32,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 278947642083183,
+   "expected": 278947642083183,
+   "fees": 0,
+   "difficulty": 23912,
+   "balances": {
+    "alice": 240.324024626344,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839155,
+   "heights": {
+    "a": 34,
+    "b": 34,
+    "c": 34
+   },
+   "agree_at": 33,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 287530577918238,
+   "expected": 287530577918238,
+   "fees": 0,
+   "difficulty": 24534,
+   "balances": {
+    "alice": 248.906960461399,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839185,
+   "heights": {
+    "a": 35,
+    "b": 35,
+    "c": 35
+   },
+   "agree_at": 34,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 296113509660630,
+   "expected": 296113509660630,
+   "fees": 0,
+   "difficulty": 25024,
+   "balances": {
+    "alice": 257.489892203791,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839215,
+   "heights": {
+    "a": 35,
+    "b": 35,
+    "c": 35
+   },
+   "agree_at": 34,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 296113509660630,
+   "expected": 296113509660630,
+   "fees": 0,
+   "difficulty": 25024,
+   "balances": {
+    "alice": 257.489892203791,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839245,
+   "heights": {
+    "a": 36,
+    "b": 36,
+    "c": 36
+   },
+   "agree_at": 35,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 304696437310361,
+   "expected": 304696437310361,
+   "fees": 0,
+   "difficulty": 25444,
+   "balances": {
+    "alice": 266.072819853522,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839275,
+   "heights": {
+    "a": 36,
+    "b": 36,
+    "c": 36
+   },
+   "agree_at": 35,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 304696437310361,
+   "expected": 304696437310361,
+   "fees": 0,
+   "difficulty": 25444,
+   "balances": {
+    "alice": 266.072819853522,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839305,
+   "heights": {
+    "a": 36,
+    "b": 36,
+    "c": 36
+   },
+   "agree_at": 35,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 304696437310361,
+   "expected": 304696437310361,
+   "fees": 0,
+   "difficulty": 25444,
+   "balances": {
+    "alice": 266.072819853522,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839335,
+   "heights": {
+    "a": 36,
+    "b": 36,
+    "c": 36
+   },
+   "agree_at": 35,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 304696437310361,
+   "expected": 304696437310361,
+   "fees": 0,
+   "difficulty": 25444,
+   "balances": {
+    "alice": 266.072819853522,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839365,
+   "heights": {
+    "a": 36,
+    "b": 36,
+    "c": 36
+   },
+   "agree_at": 35,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 304696437310361,
+   "expected": 304696437310361,
+   "fees": 0,
+   "difficulty": 25444,
+   "balances": {
+    "alice": 266.072819853522,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839395,
+   "heights": {
+    "a": 36,
+    "b": 36,
+    "c": 36
+   },
+   "agree_at": 35,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 304696437310361,
+   "expected": 304696437310361,
+   "fees": 0,
+   "difficulty": 25444,
+   "balances": {
+    "alice": 266.072819853522,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839425,
+   "heights": {
+    "a": 36,
+    "b": 36,
+    "c": 36
+   },
+   "agree_at": 35,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 304696437310361,
+   "expected": 304696437310361,
+   "fees": 0,
+   "difficulty": 25444,
+   "balances": {
+    "alice": 266.072819853522,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839455,
+   "heights": {
+    "a": 36,
+    "b": 36,
+    "c": 36
+   },
+   "agree_at": 35,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 304696437310361,
+   "expected": 304696437310361,
+   "fees": 0,
+   "difficulty": 25444,
+   "balances": {
+    "alice": 266.072819853522,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839485,
+   "heights": {
+    "a": 37,
+    "b": 37,
+    "c": 37
+   },
+   "agree_at": 36,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 313279360867433,
+   "expected": 313279360867433,
+   "fees": 0,
+   "difficulty": 24643,
+   "balances": {
+    "alice": 274.655743410594,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839515,
+   "heights": {
+    "a": 38,
+    "b": 38,
+    "c": 38
+   },
+   "agree_at": 37,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 321862280331849,
+   "expected": 321862280331849,
+   "fees": 0,
+   "difficulty": 25286,
+   "balances": {
+    "alice": 283.23866287501,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839545,
+   "heights": {
+    "a": 38,
+    "b": 38,
+    "c": 38
+   },
+   "agree_at": 37,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 321862280331849,
+   "expected": 321862280331849,
+   "fees": 0,
+   "difficulty": 25286,
+   "balances": {
+    "alice": 283.23866287501,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839575,
+   "heights": {
+    "a": 39,
+    "b": 39,
+    "c": 39
+   },
+   "agree_at": 38,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 330445195703610,
+   "expected": 330445195703610,
+   "fees": 0,
+   "difficulty": 25709,
+   "balances": {
+    "alice": 291.821578246771,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839605,
+   "heights": {
+    "a": 39,
+    "b": 39,
+    "c": 39
+   },
+   "agree_at": 38,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 330445195703610,
+   "expected": 330445195703610,
+   "fees": 0,
+   "difficulty": 25709,
+   "balances": {
+    "alice": 291.821578246771,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839635,
+   "heights": {
+    "a": 39,
+    "b": 39,
+    "c": 39
+   },
+   "agree_at": 38,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 330445195703610,
+   "expected": 330445195703610,
+   "fees": 0,
+   "difficulty": 25709,
+   "balances": {
+    "alice": 291.821578246771,
+    "bob": 34.332083033011,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839665,
+   "heights": {
+    "a": 40,
+    "b": 40,
+    "c": 40
+   },
+   "agree_at": 39,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 339028106982718,
+   "expected": 339028106982718,
+   "fees": 0,
+   "difficulty": 25910,
+   "balances": {
+    "alice": 291.821578246771,
+    "bob": 42.914994312119,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839695,
+   "heights": {
+    "a": 41,
+    "b": 41,
+    "c": 41
+   },
+   "agree_at": 40,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 347611014169175,
+   "expected": 347611014169175,
+   "fees": 0,
+   "difficulty": 26420,
+   "balances": {
+    "alice": 300.404485433228,
+    "bob": 42.914994312119,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839725,
+   "heights": {
+    "a": 41,
+    "b": 41,
+    "c": 41
+   },
+   "agree_at": 40,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 347611014169175,
+   "expected": 347611014169175,
+   "fees": 0,
+   "difficulty": 26420,
+   "balances": {
+    "alice": 300.404485433228,
+    "bob": 42.914994312119,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839755,
+   "heights": {
+    "a": 41,
+    "b": 41,
+    "c": 41
+   },
+   "agree_at": 40,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 347611014169175,
+   "expected": 347611014169175,
+   "fees": 0,
+   "difficulty": 26420,
+   "balances": {
+    "alice": 300.404485433228,
+    "bob": 42.914994312119,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839785,
+   "heights": {
+    "a": 43,
+    "b": 43,
+    "c": 43
+   },
+   "agree_at": 42,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 364776816264143,
+   "expected": 364776816264143,
+   "fees": 0,
+   "difficulty": 27326,
+   "balances": {
+    "alice": 317.570287528196,
+    "bob": 42.914994312119,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839815,
+   "heights": {
+    "a": 43,
+    "b": 43,
+    "c": 43
+   },
+   "agree_at": 42,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 364776816264143,
+   "expected": 364776816264143,
+   "fees": 0,
+   "difficulty": 27326,
+   "balances": {
+    "alice": 317.570287528196,
+    "bob": 42.914994312119,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839845,
+   "heights": {
+    "a": 44,
+    "b": 44,
+    "c": 44
+   },
+   "agree_at": 43,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 373359711172658,
+   "expected": 373359711172658,
+   "fees": 0,
+   "difficulty": 27893,
+   "balances": {
+    "alice": 317.570287528196,
+    "bob": 51.497889220634,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839875,
+   "heights": {
+    "a": 44,
+    "b": 44,
+    "c": 44
+   },
+   "agree_at": 43,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 373359711172658,
+   "expected": 373359711172658,
+   "fees": 0,
+   "difficulty": 27893,
+   "balances": {
+    "alice": 317.570287528196,
+    "bob": 51.497889220634,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839905,
+   "heights": {
+    "a": 44,
+    "b": 44,
+    "c": 44
+   },
+   "agree_at": 43,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 373359711172658,
+   "expected": 373359711172658,
+   "fees": 0,
+   "difficulty": 27893,
+   "balances": {
+    "alice": 317.570287528196,
+    "bob": 51.497889220634,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839935,
+   "heights": {
+    "a": 44,
+    "b": 44,
+    "c": 44
+   },
+   "agree_at": 43,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 373359711172658,
+   "expected": 373359711172658,
+   "fees": 0,
+   "difficulty": 27893,
+   "balances": {
+    "alice": 317.570287528196,
+    "bob": 51.497889220634,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839965,
+   "heights": {
+    "a": 44,
+    "b": 44,
+    "c": 44
+   },
+   "agree_at": 43,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 373359711172658,
+   "expected": 373359711172658,
+   "fees": 0,
+   "difficulty": 27893,
+   "balances": {
+    "alice": 317.570287528196,
+    "bob": 51.497889220634,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794839995,
+   "heights": {
+    "a": 44,
+    "b": 44,
+    "c": 44
+   },
+   "agree_at": 43,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 373359711172658,
+   "expected": 373359711172658,
+   "fees": 0,
+   "difficulty": 27893,
+   "balances": {
+    "alice": 317.570287528196,
+    "bob": 51.497889220634,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840025,
+   "heights": {
+    "a": 45,
+    "b": 45,
+    "c": 45
+   },
+   "agree_at": 44,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 381942601988530,
+   "expected": 381942601988530,
+   "fees": 0,
+   "difficulty": 27443,
+   "balances": {
+    "alice": 317.570287528196,
+    "bob": 60.080780036506,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840055,
+   "heights": {
+    "a": 46,
+    "b": 46,
+    "c": 46
+   },
+   "agree_at": 45,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 390525488711761,
+   "expected": 390525488711761,
+   "fees": 0,
+   "difficulty": 28008,
+   "balances": {
+    "alice": 317.570287528196,
+    "bob": 68.663666759737,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840085,
+   "heights": {
+    "a": 47,
+    "b": 47,
+    "c": 47
+   },
+   "agree_at": 46,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 399108371342353,
+   "expected": 399108371342353,
+   "fees": 0,
+   "difficulty": 28452,
+   "balances": {
+    "alice": 317.570287528196,
+    "bob": 77.246549390329,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840115,
+   "heights": {
+    "a": 48,
+    "b": 48,
+    "c": 48
+   },
+   "agree_at": 47,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 407691249880307,
+   "expected": 407691249880307,
+   "fees": 0,
+   "difficulty": 29158,
+   "balances": {
+    "alice": 317.570287528196,
+    "bob": 85.829427928283,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840145,
+   "heights": {
+    "a": 50,
+    "b": 50,
+    "c": 50
+   },
+   "agree_at": 49,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 424856994678311,
+   "expected": 424856994678311,
+   "fees": 0,
+   "difficulty": 30541,
+   "balances": {
+    "alice": 326.153157880881,
+    "bob": 94.412302373602,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840175,
+   "heights": {
+    "a": 51,
+    "b": 51,
+    "c": 51
+   },
+   "agree_at": 50,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 433439860938365,
+   "expected": 433439860938365,
+   "fees": 0,
+   "difficulty": 31160,
+   "balances": {
+    "alice": 326.153157880881,
+    "bob": 102.995168633656,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840205,
+   "heights": {
+    "a": 52,
+    "b": 52,
+    "c": 52
+   },
+   "agree_at": 51,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 442022723105789,
+   "expected": 442022723105789,
+   "fees": 0,
+   "difficulty": 31809,
+   "balances": {
+    "alice": 334.736020048305,
+    "bob": 102.995168633656,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840235,
+   "heights": {
+    "a": 52,
+    "b": 52,
+    "c": 52
+   },
+   "agree_at": 51,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 442022723105789,
+   "expected": 442022723105789,
+   "fees": 0,
+   "difficulty": 31809,
+   "balances": {
+    "alice": 334.736020048305,
+    "bob": 102.995168633656,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840265,
+   "heights": {
+    "a": 53,
+    "b": 53,
+    "c": 53
+   },
+   "agree_at": 52,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 450605581180586,
+   "expected": 450605581180586,
+   "fees": 0,
+   "difficulty": 32198,
+   "balances": {
+    "alice": 334.736020048305,
+    "bob": 111.578026708453,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840295,
+   "heights": {
+    "a": 53,
+    "b": 53,
+    "c": 53
+   },
+   "agree_at": 52,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 450605581180586,
+   "expected": 450605581180586,
+   "fees": 0,
+   "difficulty": 32198,
+   "balances": {
+    "alice": 334.736020048305,
+    "bob": 111.578026708453,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840325,
+   "heights": {
+    "a": 53,
+    "b": 53,
+    "c": 53
+   },
+   "agree_at": 52,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 450605581180586,
+   "expected": 450605581180586,
+   "fees": 0,
+   "difficulty": 32198,
+   "balances": {
+    "alice": 334.736020048305,
+    "bob": 111.578026708453,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840355,
+   "heights": {
+    "a": 54,
+    "b": 54,
+    "c": 54
+   },
+   "agree_at": 53,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 459188435162757,
+   "expected": 459188435162757,
+   "fees": 0,
+   "difficulty": 32301,
+   "balances": {
+    "alice": 334.736020048305,
+    "bob": 120.160880690624,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840385,
+   "heights": {
+    "a": 54,
+    "b": 54,
+    "c": 54
+   },
+   "agree_at": 53,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 459188435162757,
+   "expected": 459188435162757,
+   "fees": 0,
+   "difficulty": 32301,
+   "balances": {
+    "alice": 334.736020048305,
+    "bob": 120.160880690624,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840415,
+   "heights": {
+    "a": 54,
+    "b": 54,
+    "c": 54
+   },
+   "agree_at": 53,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 459188435162757,
+   "expected": 459188435162757,
+   "fees": 0,
+   "difficulty": 32301,
+   "balances": {
+    "alice": 334.736020048305,
+    "bob": 120.160880690624,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840445,
+   "heights": {
+    "a": 54,
+    "b": 54,
+    "c": 54
+   },
+   "agree_at": 53,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 459188435162757,
+   "expected": 459188435162757,
+   "fees": 0,
+   "difficulty": 32301,
+   "balances": {
+    "alice": 334.736020048305,
+    "bob": 120.160880690624,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840475,
+   "heights": {
+    "a": 54,
+    "b": 54,
+    "c": 54
+   },
+   "agree_at": 53,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 459188435162757,
+   "expected": 459188435162757,
+   "fees": 0,
+   "difficulty": 32301,
+   "balances": {
+    "alice": 334.736020048305,
+    "bob": 120.160880690624,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840505,
+   "heights": {
+    "a": 54,
+    "b": 54,
+    "c": 54
+   },
+   "agree_at": 53,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 459188435162757,
+   "expected": 459188435162757,
+   "fees": 0,
+   "difficulty": 32301,
+   "balances": {
+    "alice": 334.736020048305,
+    "bob": 120.160880690624,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840536,
+   "heights": {
+    "a": 55,
+    "b": 55,
+    "c": 55
+   },
+   "agree_at": 54,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 467771285052304,
+   "expected": 467771285052304,
+   "fees": 0,
+   "difficulty": 32028,
+   "balances": {
+    "alice": 343.318869937852,
+    "bob": 120.160880690624,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840566,
+   "heights": {
+    "a": 58,
+    "b": 58,
+    "c": 58
+   },
+   "agree_at": 57,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 493519810165223,
+   "expected": 493519810165223,
+   "fees": 0,
+   "difficulty": 34174,
+   "balances": {
+    "alice": 369.067395050771,
+    "bob": 120.160880690624,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840596,
+   "heights": {
+    "a": 60,
+    "b": 60,
+    "c": 60
+   },
+   "agree_at": 59,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 510685473110753,
+   "expected": 510685473110753,
+   "fees": 0,
+   "difficulty": 35584,
+   "balances": {
+    "alice": 369.067395050771,
+    "bob": 137.326543636154,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840626,
+   "heights": {
+    "a": 61,
+    "b": 61,
+    "c": 61
+   },
+   "agree_at": 60,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 519268298444599,
+   "expected": 519268298444599,
+   "fees": 0,
+   "difficulty": 36340,
+   "balances": {
+    "alice": 369.067395050771,
+    "bob": 145.90936897,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840656,
+   "heights": {
+    "a": 62,
+    "b": 62,
+    "c": 62
+   },
+   "agree_at": 61,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 527851119685835,
+   "expected": 527851119685835,
+   "fees": 0,
+   "difficulty": 37073,
+   "balances": {
+    "alice": 369.067395050771,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840686,
+   "heights": {
+    "a": 62,
+    "b": 62,
+    "c": 62
+   },
+   "agree_at": 61,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 527851119685835,
+   "expected": 527851119685835,
+   "fees": 0,
+   "difficulty": 37073,
+   "balances": {
+    "alice": 369.067395050771,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840716,
+   "heights": {
+    "a": 62,
+    "b": 62,
+    "c": 62
+   },
+   "agree_at": 61,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 527851119685835,
+   "expected": 527851119685835,
+   "fees": 0,
+   "difficulty": 37073,
+   "balances": {
+    "alice": 369.067395050771,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840746,
+   "heights": {
+    "a": 62,
+    "b": 62,
+    "c": 62
+   },
+   "agree_at": 61,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 527851119685835,
+   "expected": 527851119685835,
+   "fees": 0,
+   "difficulty": 37073,
+   "balances": {
+    "alice": 369.067395050771,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840776,
+   "heights": {
+    "a": 63,
+    "b": 63,
+    "c": 63
+   },
+   "agree_at": 62,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 536433936834463,
+   "expected": 536433936834463,
+   "fees": 0,
+   "difficulty": 36986,
+   "balances": {
+    "alice": 377.650212199399,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840806,
+   "heights": {
+    "a": 63,
+    "b": 63,
+    "c": 63
+   },
+   "agree_at": 62,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 536433936834463,
+   "expected": 536433936834463,
+   "fees": 0,
+   "difficulty": 36986,
+   "balances": {
+    "alice": 377.650212199399,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840836,
+   "heights": {
+    "a": 64,
+    "b": 64,
+    "c": 64
+   },
+   "agree_at": 63,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 545016749890485,
+   "expected": 545016749890485,
+   "fees": 0,
+   "difficulty": 37417,
+   "balances": {
+    "alice": 386.233025255421,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840866,
+   "heights": {
+    "a": 64,
+    "b": 64,
+    "c": 64
+   },
+   "agree_at": 63,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 545016749890485,
+   "expected": 545016749890485,
+   "fees": 0,
+   "difficulty": 37417,
+   "balances": {
+    "alice": 386.233025255421,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840896,
+   "heights": {
+    "a": 64,
+    "b": 64,
+    "c": 64
+   },
+   "agree_at": 63,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 545016749890485,
+   "expected": 545016749890485,
+   "fees": 0,
+   "difficulty": 37417,
+   "balances": {
+    "alice": 386.233025255421,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840926,
+   "heights": {
+    "a": 65,
+    "b": 65,
+    "c": 65
+   },
+   "agree_at": 64,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 553599558853903,
+   "expected": 553599558853903,
+   "fees": 0,
+   "difficulty": 37631,
+   "balances": {
+    "alice": 394.815834218839,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840956,
+   "heights": {
+    "a": 66,
+    "b": 66,
+    "c": 66
+   },
+   "agree_at": 65,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 562182363724718,
+   "expected": 562182363724718,
+   "fees": 0,
+   "difficulty": 38237,
+   "balances": {
+    "alice": 403.398639089654,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794840986,
+   "heights": {
+    "a": 66,
+    "b": 66,
+    "c": 66
+   },
+   "agree_at": 65,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 562182363724718,
+   "expected": 562182363724718,
+   "fees": 0,
+   "difficulty": 38237,
+   "balances": {
+    "alice": 403.398639089654,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841016,
+   "heights": {
+    "a": 66,
+    "b": 66,
+    "c": 66
+   },
+   "agree_at": 65,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 562182363724718,
+   "expected": 562182363724718,
+   "fees": 0,
+   "difficulty": 38237,
+   "balances": {
+    "alice": 403.398639089654,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841046,
+   "heights": {
+    "a": 66,
+    "b": 66,
+    "c": 66
+   },
+   "agree_at": 65,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 562182363724718,
+   "expected": 562182363724718,
+   "fees": 0,
+   "difficulty": 38237,
+   "balances": {
+    "alice": 403.398639089654,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841076,
+   "heights": {
+    "a": 66,
+    "b": 66,
+    "c": 66
+   },
+   "agree_at": 65,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 562182363724718,
+   "expected": 562182363724718,
+   "fees": 0,
+   "difficulty": 38237,
+   "balances": {
+    "alice": 403.398639089654,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841106,
+   "heights": {
+    "a": 66,
+    "b": 66,
+    "c": 66
+   },
+   "agree_at": 65,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 562182363724718,
+   "expected": 562182363724718,
+   "fees": 0,
+   "difficulty": 38237,
+   "balances": {
+    "alice": 403.398639089654,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841136,
+   "heights": {
+    "a": 67,
+    "b": 67,
+    "c": 67
+   },
+   "agree_at": 66,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 570765164502933,
+   "expected": 570765164502933,
+   "fees": 0,
+   "difficulty": 37782,
+   "balances": {
+    "alice": 411.981439867869,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841166,
+   "heights": {
+    "a": 67,
+    "b": 67,
+    "c": 67
+   },
+   "agree_at": 66,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 570765164502933,
+   "expected": 570765164502933,
+   "fees": 0,
+   "difficulty": 37782,
+   "balances": {
+    "alice": 411.981439867869,
+    "bob": 154.492190211236,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841196,
+   "heights": {
+    "a": 69,
+    "b": 69,
+    "c": 69
+   },
+   "agree_at": 68,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 587930753781570,
+   "expected": 587930753781570,
+   "fees": 0,
+   "difficulty": 39039,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 163.074982804256,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841226,
+   "heights": {
+    "a": 70,
+    "b": 70,
+    "c": 70
+   },
+   "agree_at": 69,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 596513542281996,
+   "expected": 596513542281996,
+   "fees": 0,
+   "difficulty": 39637,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 171.657771304682,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841256,
+   "heights": {
+    "a": 70,
+    "b": 70,
+    "c": 70
+   },
+   "agree_at": 69,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 596513542281996,
+   "expected": 596513542281996,
+   "fees": 0,
+   "difficulty": 39637,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 171.657771304682,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841286,
+   "heights": {
+    "a": 70,
+    "b": 70,
+    "c": 70
+   },
+   "agree_at": 69,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 596513542281996,
+   "expected": 596513542281996,
+   "fees": 0,
+   "difficulty": 39637,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 171.657771304682,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841316,
+   "heights": {
+    "a": 70,
+    "b": 70,
+    "c": 70
+   },
+   "agree_at": 69,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 596513542281996,
+   "expected": 596513542281996,
+   "fees": 0,
+   "difficulty": 39637,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 171.657771304682,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841346,
+   "heights": {
+    "a": 70,
+    "b": 70,
+    "c": 70
+   },
+   "agree_at": 69,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 596513542281996,
+   "expected": 596513542281996,
+   "fees": 0,
+   "difficulty": 39637,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 171.657771304682,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841376,
+   "heights": {
+    "a": 70,
+    "b": 70,
+    "c": 70
+   },
+   "agree_at": 69,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 596513542281996,
+   "expected": 596513542281996,
+   "fees": 0,
+   "difficulty": 39637,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 171.657771304682,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841406,
+   "heights": {
+    "a": 70,
+    "b": 70,
+    "c": 70
+   },
+   "agree_at": 69,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 596513542281996,
+   "expected": 596513542281996,
+   "fees": 0,
+   "difficulty": 39637,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 171.657771304682,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841436,
+   "heights": {
+    "a": 71,
+    "b": 71,
+    "c": 71
+   },
+   "agree_at": 70,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 605096326689829,
+   "expected": 605096326689829,
+   "fees": 0,
+   "difficulty": 39154,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 180.240555712515,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841466,
+   "heights": {
+    "a": 71,
+    "b": 71,
+    "c": 71
+   },
+   "agree_at": 70,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 605096326689829,
+   "expected": 605096326689829,
+   "fees": 0,
+   "difficulty": 39154,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 180.240555712515,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841496,
+   "heights": {
+    "a": 71,
+    "b": 71,
+    "c": 71
+   },
+   "agree_at": 70,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 605096326689829,
+   "expected": 605096326689829,
+   "fees": 0,
+   "difficulty": 39154,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 180.240555712515,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841526,
+   "heights": {
+    "a": 71,
+    "b": 71,
+    "c": 71
+   },
+   "agree_at": 70,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 605096326689829,
+   "expected": 605096326689829,
+   "fees": 0,
+   "difficulty": 39154,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 180.240555712515,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841556,
+   "heights": {
+    "a": 71,
+    "b": 71,
+    "c": 71
+   },
+   "agree_at": 70,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 605096326689829,
+   "expected": 605096326689829,
+   "fees": 0,
+   "difficulty": 39154,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 180.240555712515,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841586,
+   "heights": {
+    "a": 71,
+    "b": 71,
+    "c": 71
+   },
+   "agree_at": 70,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 605096326689829,
+   "expected": 605096326689829,
+   "fees": 0,
+   "difficulty": 39154,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 180.240555712515,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841617,
+   "heights": {
+    "a": 71,
+    "b": 71,
+    "c": 71
+   },
+   "agree_at": 70,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 605096326689829,
+   "expected": 605096326689829,
+   "fees": 0,
+   "difficulty": 39154,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 180.240555712515,
+    "carol": 0.0
+   }
+  },
+  {
+   "t": 1794841647,
+   "heights": {
+    "a": 71,
+    "b": 71,
+    "c": 71
+   },
+   "agree_at": 70,
+   "agree": true,
+   "alt_blocks": 1,
+   "emitted": 605096326689829,
+   "expected": 605096326689829,
+   "fees": 0,
+   "difficulty": 39154,
+   "balances": {
+    "alice": 420.564236553486,
+    "bob": 180.240555712515,
+    "carol": 0.0
+   }
+  }
+ ],
+ "reorgs_seen": 0
+}

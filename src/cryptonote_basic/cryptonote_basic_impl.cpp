@@ -111,6 +111,11 @@ namespace cryptonote {
       return false;
     }
 
+    if (base_reward == 0) { // post-cap: nothing to penalise
+      reward = 0;
+      return true;
+    }
+
     uint64_t product_hi;
     // BUGFIX: 32-bit saturation bug (e.g. ARM7), the result was being
     // treated as 32-bit by default.
