@@ -44,5 +44,5 @@ docker run -d --name noxiumd --restart unless-stopped -p 17750:17750 -v noxium-d
 1. Put the servers' addresses into `CONFIG` in `tools/rebrand/rebrand.py`:
    * `SEED_NODES["mainnet"] = ["1.2.3.4:17750", ...]`
    * optionally `DNS_SEEDS = ["seeds.yourdomain.org"]`, a DNS name with one A record per seed.
-2. Regenerate the source and rebuild: `git checkout 42a9fb5 -- src && python3 tools/rebrand/rebrand.py`.
+2. Regenerate the source and rebuild: `git checkout bad3b85 -- src && python3 tools/rebrand/rebrand.py`.
 3. Commit, then tag a release (`git tag v0.1.0 && git push --tags`). GitHub Actions builds Linux, Windows and macOS binaries and creates a draft release with `SHA256SUMS`.

@@ -1,6 +1,6 @@
 # Noxium (NOX) consensus and security review
 
-Scope: `git diff 42a9fb5 -- src CMakeLists.txt` (the working tree of `/home/user/noxium`, Monero release-v0.18 rebranded by `tools/rebrand/rebrand.py`), plus the upstream code those changes touch. I did not modify the repo. Every test program below lives under `/tmp`.
+Scope: `git diff bad3b85 -- src CMakeLists.txt` (the working tree of `/home/user/noxium`, Monero release-v0.18 rebranded by `tools/rebrand/rebrand.py`), plus the upstream code those changes touch. I did not modify the repo. Every test program below lives under `/tmp`.
 
 Legend for evidence:
 - **[V]** I checked this by running code (a test program linked against the built `build/release` libraries, a Python re-derivation, or a live offline testnet daemon).

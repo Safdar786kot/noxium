@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Noxium node installer for a fresh Ubuntu/Debian VPS (run as root).
 #
-#   curl -fsSLO https://raw.githubusercontent.com/<you>/noxium/main/tools/deploy/install-node.sh
+#   curl -fsSLO https://raw.githubusercontent.com/Safdar786kot/noxium/main/tools/deploy/install-node.sh
 #   sudo bash install-node.sh --tarball <URL or path to noxium-linux-x64 tar.gz> [options]
 #
 # Options:

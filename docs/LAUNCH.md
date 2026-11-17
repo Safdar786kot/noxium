@@ -11,7 +11,7 @@
 - [ ] Invite testers to mine (`noxiumd --testnet --add-priority-node <seed>:27750`) and send transactions.
 - [ ] Remember that transfers start working only after ~76 blocks (ring size 16 needs enough unlocked outputs).
 - [ ] Watch for crashes, forks and wallet errors; fix them, and tag new testnet builds.
-- [ ] Optional: ask a second, paid auditor to review the consensus changes (`git diff 42a9fb5 -- src`).
+- [ ] Optional: ask a second, paid auditor to review the consensus changes (`git diff bad3b85 -- src`).
 
 ## 3. Mainnet release (launch day − 7)
 - [ ] Freeze the code. Tag `v1.0.0` and publish the GitHub release with `SHA256SUMS`.
