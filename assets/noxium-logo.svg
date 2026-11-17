@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2B1B6B"/>
+      <stop offset="1" stop-color="#0B0A24"/>
+    </linearGradient>
+    <linearGradient id="glyph" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7FE7F2"/>
+      <stop offset="1" stop-color="#8B6CFF"/>
+    </linearGradient>
+  </defs>
+  <circle cx="256" cy="256" r="248" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="232" fill="none" stroke="#8B6CFF" stroke-opacity="0.45" stroke-width="6"/>
+  <!-- crescent: "nox" = night -->
+  <path d="M408.82 146.45A30 30 0 1 0 442.41 185.64A26 26 0 1 1 408.82 146.45z" fill="#7FE7F2"/>
+  <!-- geometric N -->
+  <path d="M148 392V136h56l104 156V136h56v256h-56L204 236v156z" fill="url(#glyph)"/>
+  <path d="M120 420h272" stroke="#7FE7F2" stroke-opacity="0.6" stroke-width="10" stroke-linecap="round"/>
+</svg>
