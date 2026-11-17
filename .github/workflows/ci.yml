@@ -30,5 +30,7 @@ jobs:
       - name: Noxium consensus tests
         run: build/release/tests/unit_tests/unit_tests --gtest_filter='noxium_consensus.*:block_reward*'
       - name: full unit tests
-        # http_server.response_soft_limit / boosted_tcp_server.shutdown are environment-sensitive upstream tests
-        run: cd build/release/tests/unit_tests && ./unit_tests --gtest_filter='-http_server.response_soft_limit:boosted_tcp_server.shutdown'
+        # Excluded upstream Monero tests that depend on the environment, not on Noxium code:
+        #  AddressFromURL.Failure needs live DNSSEC; ban.subnet calls parse_command_line(0, nullptr), which throws on newer Boost;
+        #  http_server.response_soft_limit / boosted_tcp_server.shutdown are timing-sensitive.
+        run: cd build/release/tests/unit_tests && ./unit_tests --gtest_filter='-AddressFromURL.Failure:ban.subnet:http_server.response_soft_limit:boosted_tcp_server.shutdown'
