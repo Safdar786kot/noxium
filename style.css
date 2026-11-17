@@ -39,7 +39,7 @@ h3{font-size:1.3rem;font-weight:700;margin-bottom:.5rem}
 .lede{font-size:1.15rem;color:var(--muted);max-width:52ch;margin:1.5rem 0 2rem}.lede strong{color:var(--text)}
 .cta{display:flex;flex-wrap:wrap;gap:.75rem}
 .hero-art{position:relative;display:grid;place-items:center}
-.hero-art img{width:min(360px,80%);filter:drop-shadow(0 30px 60px rgba(0,0,0,.6))}
+.hero-art img{width:min(360px,80%);height:auto;filter:drop-shadow(0 30px 60px rgba(0,0,0,.6))}
 .orbit{position:absolute;width:min(460px,100%);aspect-ratio:1;border:1px dashed var(--line);border-radius:50%;animation:spin 80s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .stats,.milestones{display:grid;grid-template-columns:repeat(4,1fr);margin-top:4rem;border-top:1px solid var(--line)}
@@ -76,7 +76,7 @@ h3{font-size:1.3rem;font-weight:700;margin-bottom:.5rem}
 .n{font:500 .8rem var(--f-mono);color:var(--accent);display:block;margin-bottom:1rem}
 .steps p{color:var(--muted)}.steps .small{margin-top:.75rem}
 pre{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:.85rem 1rem;margin-top:.9rem;overflow-x:auto}
-pre code{color:var(--text);font-size:.82rem;white-space:pre}
+pre code{color:var(--text);font-size:.8rem;white-space:pre-wrap;overflow-wrap:anywhere}
 
 .checks{list-style:none;padding:0;display:grid;gap:0}
 .checks li{padding:1rem 0 1rem 2rem;border-bottom:1px solid var(--line);color:var(--muted);position:relative}
