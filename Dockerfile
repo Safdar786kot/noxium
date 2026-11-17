@@ -1,66 +1,24 @@
-# Multistage docker build, requires docker 17.05
-
-# builder stage
-FROM ubuntu:20.04 as builder
-
-RUN set -ex && \
-    apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends --yes install \
-        automake \
-        autotools-dev \
-        bsdmainutils \
-        build-essential \
-        ca-certificates \
-        ccache \
-        cmake \
-        curl \
-        git \
-        libtool \
-        pkg-config \
-        gperf
-
+# Noxium node image (multi-stage, reproducible "depends" build)
+#   docker build -t noxium .
+#   docker run -d --name noxiumd -p 17750:17750 -v noxium-data:/home/noxium/.noxium noxium
+FROM ubuntu:20.04 AS builder
+RUN set -ex && apt-get update && DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends --yes install \
+      automake autotools-dev bsdmainutils build-essential ca-certificates ccache cmake curl git libtool pkg-config gperf python3
 WORKDIR /src
 COPY . .
-
 ARG NPROC
-RUN set -ex && \
-    git submodule init && git submodule update && \
-    rm -rf build && \
-    if [ -z "$NPROC" ] ; \
-    then make -j$(nproc) depends target=x86_64-linux-gnu ; \
-    else make -j$NPROC depends target=x86_64-linux-gnu ; \
-    fi
+RUN set -ex && rm -rf build && make -j${NPROC:-$(nproc)} depends target=x86_64-linux-gnu
 
-# runtime stage
 FROM ubuntu:20.04
-
-RUN set -ex && \
-    apt-get update && \
-    apt-get --no-install-recommends --yes install ca-certificates && \
-    apt-get clean && \
-    rm -rf /var/lib/apt
+RUN set -ex && apt-get update && apt-get --no-install-recommends --yes install ca-certificates curl && \
+    apt-get clean && rm -rf /var/lib/apt
 COPY --from=builder /src/build/x86_64-linux-gnu/release/bin /usr/local/bin/
-
-# Create monero user
-RUN adduser --system --group --disabled-password monero && \
-	mkdir -p /wallet /home/monero/.bitmonero && \
-	chown -R monero:monero /home/monero/.bitmonero && \
-	chown -R monero:monero /wallet
-
-# Contains the blockchain
-VOLUME /home/monero/.bitmonero
-
-# Generate your wallet via accessing the container and run:
-# cd /wallet
-# monero-wallet-cli
+RUN adduser --system --group --disabled-password noxium && \
+    mkdir -p /wallet /home/noxium/.noxium && chown -R noxium:noxium /home/noxium/.noxium /wallet
+VOLUME /home/noxium/.noxium
 VOLUME /wallet
-
-EXPOSE 18080
-EXPOSE 18081
-
-# switch to user monero
-USER monero
-
-ENTRYPOINT ["monerod"]
-CMD ["--p2p-bind-ip=0.0.0.0", "--p2p-bind-port=18080", "--rpc-bind-ip=0.0.0.0", "--rpc-bind-port=18081", "--non-interactive", "--confirm-external-bind"]
-
+EXPOSE 17750 17751
+USER noxium
+HEALTHCHECK --interval=60s --timeout=10s CMD curl -fsS http://127.0.0.1:17751/get_info >/dev/null || exit 1
+ENTRYPOINT ["noxiumd"]
+CMD ["--p2p-bind-ip=0.0.0.0", "--p2p-bind-port=17750", "--rpc-bind-ip=0.0.0.0", "--rpc-bind-port=17751", "--restricted-rpc", "--non-interactive", "--confirm-external-bind"]

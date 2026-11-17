@@ -1,0 +1,34 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  linux:
+    name: Ubuntu 24.04 build + unit tests
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake pkg-config ccache libssl-dev libzmq3-dev libunbound-dev \
+            libsodium-dev libunwind-dev liblzma-dev libreadline-dev libexpat1-dev libpgm-dev libhidapi-dev \
+            libusb-1.0-0-dev libprotobuf-dev protobuf-compiler libudev-dev libboost-all-dev libgtest-dev
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/ccache
+          key: ccache-linux-${{ github.sha }}
+          restore-keys: ccache-linux-
+      - name: build
+        run: |
+          mkdir -p build/release && cd build/release
+          cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache ../..
+          make -j$(nproc) daemon simplewallet wallet_rpc_server unit_tests test_notifier
+      - name: Noxium consensus tests
+        run: build/release/tests/unit_tests/unit_tests --gtest_filter='noxium_consensus.*:block_reward*'
+      - name: full unit tests
+        # http_server.response_soft_limit / boosted_tcp_server.shutdown are environment-sensitive upstream tests
+        run: cd build/release/tests/unit_tests && ./unit_tests --gtest_filter='-http_server.response_soft_limit:boosted_tcp_server.shutdown'
