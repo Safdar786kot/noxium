@@ -2,6 +2,16 @@
 
 # Noxium (NOX)
 
+<p align="center">
+  <a href="https://safdar786kot.github.io/noxium/">Website</a> ·
+  <a href="https://github.com/Safdar786kot/noxium/releases">Downloads</a> ·
+  <a href="tools/deploy/README.md">Run a node</a> ·
+  <a href="docs/LAUNCH.md">Launch plan</a> ·
+  <a href="SECURITY_REVIEW.md">Security review</a>
+</p>
+
+> **Status:** public testnet (`v0.1.0-testnet`). Mainnet has not launched yet; testnet coins have no value.
+
 Noxium is a private, limited-supply cryptocurrency forked from [Monero](https://github.com/monero-project/monero) (release-v0.18).
 It keeps everything that makes Monero private — ring signatures (CLSAG, ring size 16), stealth addresses, RingCT with Bulletproofs+, view tags and RandomX CPU mining — but replaces Monero's perpetual tail emission with a **hard cap of 18,000,000 NOX**.
 
